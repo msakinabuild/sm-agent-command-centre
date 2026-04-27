@@ -19,3 +19,15 @@
 **No prior message exchanges on record yet. First exchange will be appended below.**
 
 ---
+
+**[INBOUND] — 2026-04-15**
+**From:** HR Consultancy
+
+Hi Sakina, just checking in — when can we expect the first draft of the onboarding workflow?
+
+---
+
+**[SENT] — 2026-04-15**
+**From:** Sakina
+
+Hi, thanks for following up. Targeting end of this week for the first draft — will send it over for your review then.

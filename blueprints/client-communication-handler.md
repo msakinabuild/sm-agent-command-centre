@@ -90,14 +90,14 @@ When Sakina pastes what she sent, run Equipment to log both messages:
 
 ```bash
 # Log the inbound first (if not already logged)
-python equipment/log-exchange.py \
+"C:/Users/smout/AppData/Local/Python/bin/python.exe" equipment/log-exchange.py \
   --direction inbound \
   --sender "HR Consultancy" \
   --date YYYY-MM-DD \
   --body "paste inbound message here"
 
 # Log what Sakina sent
-python equipment/log-exchange.py \
+"C:/Users/smout/AppData/Local/Python/bin/python.exe" equipment/log-exchange.py \
   --direction sent \
   --sender "Sakina" \
   --date YYYY-MM-DD \
@@ -115,7 +115,7 @@ Confirm both entries appear in `comms-log.md` before closing the session.
 | `comms-log.md` missing | Stop. Report. Do not draft. |
 | Inbound message not provided | Ask for it. Do not draft. |
 | Message references unknown project details | Flag inline. Do not guess. |
-| Equipment fails (Python not installed) | Log entries manually — paste formatted block into `comms-log.md` directly |
+| Equipment fails | Log entries manually — paste formatted block into `comms-log.md` directly |
 
 ---
 
