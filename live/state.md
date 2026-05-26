@@ -3,14 +3,15 @@
 *Updated at the end of each session. Read this FIRST on startup.*
 
 ## Last Session
-- **Date:** 2026-05-07
-- **Summary:** Major working session. Blueprints built (morning briefing, client onboarding, proposal generation, client communication handler). Eisenhower skill installed globally. Pipeline reviewed — Foster & Marsh moved to Negotiation, follow-up email drafted. Tasks List Google Sheet created and populated with 18 items from pipeline, tasks.md, and calendar. Hala Ventures intro call found on calendar (10 May, 11am).
+- **Date:** 2026-05-12
+- **Summary:** Built the Marketing Research Subagent — a full Three Engine Model workflow covering research, analysis, copywriting, Google Drive report creation, and Gmail draft delivery. Copywriting skill created and live. Blueprint written. Agent definition added.
 
 ## Blueprints Built
 - `blueprints/client-communication-handler.md` — Samir drafts replies, flags unknowns, logs exchanges
 - `blueprints/morning-briefing.md` — Daily brief from state, tasks, focus, Gmail, Calendar
 - `blueprints/client-onboarding.md` — End-to-end client setup via Gmail + Drive MCPs
 - `blueprints/proposal-generation.md` — Proposal drafted, Google Doc created, Gmail draft saved
+- `blueprints/marketing-research-report.md` — Marketing trends research, top 5 findings, Google Drive doc + Gmail draft
 
 ## MCPs Connected
 - Gmail MCP — live
@@ -20,6 +21,11 @@
 
 ## Skills Installed
 - Eisenhower Matrix — installed globally at `C:/Users/smout/.claude/skills/eisenhower/`
+- Copywriting — project-level at `.claude/skills/copywriting/SKILL.md` — invoke with `/copywriting`
+
+## Agents Built
+- `code-reviewer` — reviews recent code changes for bugs, security, quality
+- `marketing-researcher` — runs marketing trends research end-to-end, delivers to Google Drive + Gmail draft
 
 ## Open Tasks
 - [ ] Prep brief for Hala Ventures intro call (10 May, 11am — outbound automation, Saudi F&B)
