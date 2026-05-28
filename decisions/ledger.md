@@ -18,3 +18,5 @@ Format: [YYYY-MM-DD] DECISION: ... | REASONING: ... | CONTEXT: ...
 [2026-05-11] DECISION: Copywriting skill created and installed at project level | REASONING: Voice consistency across reports and external content requires a reusable standard — skill provides the template and quality checklist | CONTEXT: Skills build session 2026-05-11
 
 [2026-05-12] DECISION: Zapier MCP connected; Google Sheets confirmed working | REASONING: Google Calendar now reachable via Zapier; Google Sheets CRM read/write confirmed — enables CRM updates from within sessions | CONTEXT: MCP expansion session 2026-05-12
+
+[2026-05-28] DECISION: Standard pricing structure defined — 5 tiers | REASONING: No pricing existed; every quote and proposal was blocked. Tiers set based on MENA SME market, solo founder capacity, and reference points (Foster & Marsh $12k, HR Consultant project). Audit at AED 1,500 as entry point with credit toward packages. | CONTEXT: intel/pricing.md created

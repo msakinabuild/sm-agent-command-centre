@@ -27,7 +27,7 @@
 
 - [ ] Build invoice creation workflow | Due: was 2026-05-15
 - [ ] Website / landing page live | Due: was 2026-05-15
-- [ ] Work out pricing structure | Due: was 2026-05-15
+- [x] Work out pricing structure | Done: 2026-05-28 — see intel/pricing.md
 
 ## Open — Strategy
 

@@ -43,7 +43,7 @@
 - [ ] Review and send Foster & Marsh follow-up email (in Gmail drafts)
 - [ ] Build invoice creation workflow (top Build Queue item — due 2026-05-15)
 - [ ] Website / landing page live (due 2026-05-15)
-- [ ] Work out pricing structure (due 2026-05-15)
+- [x] Work out pricing structure — done 2026-05-28, see intel/pricing.md
 - [ ] Define Q2 quarterly goals
 - [ ] Define scope for HR Consultant Automation project
 
