@@ -26,7 +26,7 @@
 ## Overdue — Build Queue
 
 - [ ] Build invoice creation workflow | Due: was 2026-05-15
-- [ ] Website / landing page live | Due: was 2026-05-15
+- [x] Website / landing page built | Done: 2026-05-28 — website/index.html ready, hosting pending
 - [x] Work out pricing structure | Done: 2026-05-28 — see intel/pricing.md
 
 ## Open — Strategy
