@@ -8,14 +8,15 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --dark:    #0F172A;
-      --accent:  #4F46E5;
-      --accent2: #7C3AED;
-      --light:   #F8FAFC;
-      --muted:   #64748B;
-      --border:  #E2E8F0;
+      --dark:    #1F2937;
+      --accent:  #E91E8C;
+      --accent2: #C2185B;
+      --light:   #F9FAFB;
+      --muted:   #6B7280;
+      --border:  #E5E7EB;
       --white:   #FFFFFF;
       --green:   #059669;
+      --pink-light: #FDF2F8;
     }
 
     html { scroll-behavior: smooth; }
@@ -61,7 +62,7 @@
     }
     .hero-badge {
       display: inline-block;
-      background: #EEF2FF; color: var(--accent);
+      background: #FDF2F8; color: var(--accent);
       font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em;
       padding: 0.3rem 0.9rem; border-radius: 999px;
       margin-bottom: 1.5rem;
@@ -122,7 +123,7 @@
     .service-card:hover { box-shadow: 0 8px 30px rgba(79,70,229,0.1); transform: translateY(-2px); }
     .service-icon {
       width: 44px; height: 44px; border-radius: 10px;
-      background: #EEF2FF; display: flex; align-items: center; justify-content: center;
+      background: #FDF2F8; display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem; margin-bottom: 1rem;
     }
     .service-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
@@ -196,7 +197,7 @@
     .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
     .contact-icon {
       width: 40px; height: 40px; border-radius: 8px;
-      background: #EEF2FF; display: flex; align-items: center; justify-content: center;
+      background: #FDF2F8; display: flex; align-items: center; justify-content: center;
       font-size: 1.1rem; flex-shrink: 0;
     }
     .contact-item p { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.15rem; }
@@ -244,7 +245,14 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">SM <span>Agent</span></div>
+  <div class="nav-brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" height="36">
+      <rect width="40" height="40" rx="9" fill="#E91E8C"/>
+      <text x="20" y="27" font-family="Arial Black,Arial,sans-serif" font-size="17" font-weight="900" fill="#fff" text-anchor="middle">SM</text>
+      <text x="50" y="22" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#1F2937" text-anchor="start">Agent</text>
+      <text x="51" y="34" font-family="Arial,sans-serif" font-size="7" font-weight="400" fill="#9CA3AF" text-anchor="start" letter-spacing="1.5">AI AUTOMATION</text>
+    </svg>
+  </div>
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#how-it-works">How it works</a>
