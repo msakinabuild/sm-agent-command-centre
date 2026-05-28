@@ -12,8 +12,10 @@
 
 **From:**
 SM Agent
-Sakina
+Sakina Moutaki
 msakina.build@gmail.com
++49 176 814 87202
+www.smagent.com
 
 **To:**
 [Client Name]
@@ -25,23 +27,24 @@ msakina.build@gmail.com
 
 ## Services Rendered
 
-| # | Description | Qty | Rate (AED) | Amount (AED) |
-|---|-------------|-----|------------|--------------|
+| # | Description | Qty | Rate ($) | Amount ($) |
+|---|-------------|-----|----------|------------|
 | 1 | [Service or deliverable description] | [e.g. 1] | [rate] | [amount] |
 | 2 | [Service or deliverable description] | [e.g. 1] | [rate] | [amount] |
 | 3 | [Add rows as needed] | | | |
 
 ---
 
-**Subtotal:** AED [subtotal]
-**Tax (VAT [X]%):** AED [tax amount — or "N/A" if not applicable]
-**TOTAL DUE:** AED [total]
+**Subtotal:** $[subtotal]
+**Tax (VAT [X]%):** $[tax amount — or "N/A" if not applicable]
+**TOTAL DUE:** $[total]
 
 ---
 
 ## Payment Terms
 
 [e.g. Payment due within 30 days of invoice date.]
+50% deposit received upfront. Balance due on delivery.
 
 ## Bank Details
 
@@ -54,7 +57,7 @@ msakina.build@gmail.com
 ---
 
 *Thank you for working with SM Agent.*
-*Questions? Reply to this email or contact msakina.build@gmail.com*
+*Questions? msakina.build@gmail.com | +49 176 814 87202*
 
 ---
-*SM Agent — [Year]*
+*SM Agent — www.smagent.com — [Year]*

@@ -32,8 +32,9 @@ I'd love to find out more about what you're working on and how we might be able 
 
 Would you be open to a 30-minute call this week or next? I can work around your schedule.
 
-Sakina
-SM Agent
+Sakina Moutaki
+SM Agent | www.smagent.com
++49 176 814 87202
 ```
 
 ### 2. Follow-Up Chaser
@@ -51,8 +52,9 @@ Just following up on my previous note — wanted to make sure it didn't get lost
 
 Happy to answer any questions or find a time to talk if that's easier.
 
-Sakina
-SM Agent
+Sakina Moutaki
+SM Agent | www.smagent.com
++49 176 814 87202
 ```
 
 ### 3. Proposal Sent
@@ -70,8 +72,9 @@ As discussed — here's the proposal for [one-line scope summary].
 
 Happy to walk through it on a call if that's helpful. Just reply here and we'll find a time.
 
-Sakina
-SM Agent
+Sakina Moutaki
+SM Agent | www.smagent.com
++49 176 814 87202
 ```
 
 ### 4. Invoice Reminder
@@ -89,8 +92,9 @@ Just a quick note — invoice [invoice number] for [amount] was due on [due date
 
 If there's anything you need from my end, just let me know.
 
-Sakina
-SM Agent
+Sakina Moutaki
+SM Agent | www.smagent.com
++49 176 814 87202
 ```
 
 ### 5. Onboarding Complete
@@ -112,8 +116,9 @@ If anything looks off or you have questions before we start, just reply here.
 
 Looking forward to working with you.
 
-Sakina
-SM Agent
+Sakina Moutaki
+SM Agent | www.smagent.com
++49 176 814 87202
 ```
 
 ---

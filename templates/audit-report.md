@@ -6,7 +6,7 @@
 
 **Client:** [Client Name]
 **Company:** [Company Name]
-**Prepared by:** SM Agent — Sakina
+**Prepared by:** Sakina Moutaki — SM Agent
 **Date:** [YYYY-MM-DD]
 **Report Reference:** AUDIT-[YYYY]-[NNN]
 
@@ -95,8 +95,10 @@
 [What was and was not assessed]
 
 ### About SM Agent
-SM Agent provides AI-powered automation for SMEs. We design, build, and hand over agentic workflows that save time and reduce manual work.
-msakina.build@gmail.com
+SM Agent designs and builds AI-powered automation for SMEs. We map your operations, automate what slows you down, and hand it over ready to run.
+
+**Sakina Moutaki**
+msakina.build@gmail.com | +49 176 814 87202 | www.smagent.com
 
 ---
 *SM Agent Audit Report — [Company Name]*

@@ -12,8 +12,10 @@
 
 **From:**
 SM Agent
-Sakina
+Sakina Moutaki
 msakina.build@gmail.com
++49 176 814 87202
+www.smagent.com
 
 **Prepared For:**
 [Client Name]
@@ -50,20 +52,21 @@ msakina.build@gmail.com
 
 ## Investment
 
-| Item | Amount (AED) |
-|------|--------------|
-| [One-time setup / build fee] | AED [amount] |
-| [Monthly retainer (if applicable)] | AED [amount]/month |
-| **TOTAL** | **AED [total]** |
+| Item | Amount ($) |
+|------|------------|
+| [One-time setup / build fee] | $[amount] |
+| [Monthly retainer (if applicable)] | $[amount]/month |
+| **TOTAL** | **$[total]** |
 
-[FLAG: confirm pricing with Sakina before sending]
+[FLAG: confirm pricing with Sakina before sending — see intel/pricing.md]
 
 ---
 
 ## Terms
 
 - This quote is valid until [date].
-- Work begins upon written confirmation and receipt of deposit (if applicable).
+- 50% deposit required to begin. Balance due on delivery.
+- Work begins upon written confirmation and receipt of deposit.
 - [Any other relevant terms — e.g. scope change policy, revision rounds]
 
 ---
@@ -74,5 +77,6 @@ msakina.build@gmail.com
 
 ---
 
-*Prepared by SM Agent | msakina.build@gmail.com*
+*Sakina Moutaki | SM Agent*
+*msakina.build@gmail.com | +49 176 814 87202 | www.smagent.com*
 *Quote [QTE-YYYY-NNN] — [Date]*
