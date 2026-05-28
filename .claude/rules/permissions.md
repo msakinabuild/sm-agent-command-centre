@@ -14,3 +14,4 @@ BEFORE taking any of the following actions, you MUST ask for explicit approval a
 | Consequential decisions | Describe the decision and options — never choose unilaterally |
 | Publish anything publicly | Show the content and confirm before posting |
 | Modify .env or credentials | Confirm before touching |
+| Export or forward client data to any external system (webhooks, Slack, Discord, third-party APIs) | Show what data is being sent and where — confirm before proceeding |

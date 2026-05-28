@@ -98,6 +98,9 @@ MCP servers connected: Gmail, Google Drive, Google Calendar (via Zapier), Zapier
 | 5 | Social media posts | `blueprints/social-media-post.md` | None | ✅ Built |
 | 6 | Audit report | `blueprints/audit-report.md` | None | ✅ Built |
 | 7 | Morning briefing | `blueprints/morning-briefing.md` | None | ✅ Built |
+| 8 | Research | `blueprints/research.md` | None | ✅ Built — agent: `.claude/agents/researcher.md` |
+| 9 | Code review | None | None | ✅ Built — agent: `.claude/agents/code-reviewer.md` |
+| 10 | Pipeline closer | `blueprints/pipeline-closer.md` | None | ✅ Built — agent: `.claude/agents/pipeline-closer.md` |
 
 To trigger any workflow: use its trigger phrase (see each blueprint). These are semantic triggers — any request expressing the same intent activates the corresponding blueprint.
 
@@ -144,6 +147,7 @@ After significant task completions, memory entries document what was done, what 
 | archive/ | Nothing gets deleted — it gets moved here |
 | .claude/skills/ | Built on demand — one folder per skill |
 | .claude/rules/ | Auto-loaded every session: voice, permissions |
+| .claude/agents/ | Subagent definitions — spawned for specialised tasks |
 
 ---
 

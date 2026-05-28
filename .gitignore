@@ -8,3 +8,7 @@ credentials.json
 token.json
 *.pyc
 __pycache__/
+
+# Operational data — sensitive, not for version control
+intel/
+live/
