@@ -40,10 +40,7 @@
       display: flex; align-items: center; justify-content: space-between;
       height: 64px;
     }
-    .nav-brand {
-      font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em;
-    }
-    .nav-brand span { color: var(--accent); }
+    .nav-brand { display: flex; align-items: center; }
     .nav-links { display: flex; gap: 2rem; font-size: 0.9rem; color: var(--muted); }
     .nav-links a:hover { color: var(--dark); }
     .nav-cta {
@@ -246,12 +243,26 @@
 <!-- NAV -->
 <nav>
   <div class="nav-brand">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="none" height="36">
-      <rect width="40" height="40" rx="9" fill="#E91E8C"/>
-      <text x="20" y="27" font-family="Arial Black,Arial,sans-serif" font-size="17" font-weight="900" fill="#fff" text-anchor="middle">SM</text>
-      <text x="50" y="22" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#1F2937" text-anchor="start">Agent</text>
-      <text x="51" y="34" font-family="Arial,sans-serif" font-size="7" font-weight="400" fill="#9CA3AF" text-anchor="start" letter-spacing="1.5">AI AUTOMATION</text>
+    <svg width="30" height="38" viewBox="0 0 56 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="navFlowGrad" x1="52" y1="12" x2="20" y2="60" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#F472B6"/>
+          <stop offset="50%" stop-color="#E91E8C"/>
+          <stop offset="100%" stop-color="#9D174D"/>
+        </linearGradient>
+      </defs>
+      <path d="M 42 8 C 58 8 58 34 28 34 C -2 34 -2 60 14 60" stroke="url(#navFlowGrad)" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <circle cx="42" cy="8" r="6.5" fill="#E91E8C"/>
+      <circle cx="42" cy="8" r="3" fill="#fff"/>
+      <circle cx="28" cy="34" r="5" fill="#C2185B"/>
+      <circle cx="28" cy="34" r="2" fill="#fff"/>
+      <circle cx="14" cy="60" r="6.5" fill="#E91E8C"/>
+      <polygon points="11,57 17,60 11,63" fill="#fff"/>
     </svg>
+    <div style="margin-left:10px;line-height:1.2">
+      <div style="font-size:17px;font-weight:800;color:#1F2937;letter-spacing:-0.03em">SM Agent</div>
+      <div style="font-size:8px;color:#9CA3AF;letter-spacing:2px;text-transform:uppercase">AI Automation</div>
+    </div>
   </div>
   <div class="nav-links">
     <a href="#services">Services</a>

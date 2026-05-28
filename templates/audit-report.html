@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audit Report [AUDIT-YYYY-NNN] — SM Agent</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-size: 14px; line-height: 1.6; color: #1F2937;
+      background: #fff; padding: 40px;
+      max-width: 860px; margin: 0 auto;
+    }
+
+    .doc-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .doc-logo { display: flex; align-items: center; gap: 14px; }
+    .doc-logo-text h1 { font-size: 20px; font-weight: 800; color: #1F2937; letter-spacing: -0.03em; }
+    .doc-logo-text p { font-size: 9px; color: #9CA3AF; letter-spacing: 2px; text-transform: uppercase; margin-top: 1px; }
+    .doc-contact { text-align: right; font-size: 12px; color: #6B7280; line-height: 1.8; }
+    .doc-contact a { color: #6B7280; }
+    .accent-line { height: 2px; background: #E91E8C; margin-bottom: 28px; border-radius: 1px; }
+
+    .report-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .report-header h2 { font-size: 26px; font-weight: 800; color: #E91E8C; letter-spacing: -0.04em; margin-bottom: 4px; }
+    .report-header .client-name { font-size: 18px; font-weight: 700; color: #1F2937; }
+    .report-meta { text-align: right; font-size: 12px; color: #6B7280; line-height: 2; }
+    .report-meta strong { color: #1F2937; }
+
+    h3 {
+      font-size: 11px; font-weight: 700; color: #1F2937;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      border-left: 3px solid #E91E8C; padding-left: 10px;
+      margin: 32px 0 12px;
+    }
+
+    /* Executive summary */
+    .exec-summary {
+      background: #FDF2F8; border-left: 3px solid #E91E8C;
+      padding: 18px 22px; border-radius: 0 8px 8px 0;
+      font-size: 14px; color: #374151; line-height: 1.8;
+    }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th {
+      background: #F9FAFB; color: #1F2937;
+      font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 10px 14px; border: 1px solid #E5E7EB; text-align: left;
+    }
+    td { padding: 10px 14px; border: 1px solid #E5E7EB; color: #374151; vertical-align: top; }
+
+    /* Findings */
+    .finding {
+      border: 1px solid #E5E7EB; border-radius: 8px;
+      margin-bottom: 16px; overflow: hidden;
+    }
+    .finding-header {
+      background: #F9FAFB; padding: 12px 18px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .finding-number {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #E91E8C; color: #fff;
+      font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .finding-title { font-size: 14px; font-weight: 700; color: #1F2937; }
+    .finding-body { padding: 14px 18px; }
+    .finding-label { font-size: 10px; font-weight: 700; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px; margin-top: 10px; }
+    .finding-label:first-child { margin-top: 0; }
+    .finding-text { font-size: 13px; color: #374151; line-height: 1.7; }
+    .impact-text { font-size: 13px; color: #C2185B; line-height: 1.7; font-style: italic; }
+
+    /* Recommendations */
+    .rec {
+      display: flex; gap: 16px; margin-bottom: 16px;
+      padding: 14px 16px; border: 1px solid #E5E7EB; border-radius: 8px;
+    }
+    .rec-priority {
+      flex-shrink: 0; width: 32px; height: 32px;
+      border-radius: 6px; background: #FDF2F8; border: 1px solid #E91E8C;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800; color: #E91E8C;
+    }
+    .rec-content h4 { font-size: 13px; font-weight: 700; color: #1F2937; margin-bottom: 4px; }
+    .rec-content p { font-size: 13px; color: #374151; line-height: 1.6; }
+
+    /* About section */
+    .about-box {
+      background: #1F2937; color: #fff;
+      padding: 20px 24px; border-radius: 10px; margin-top: 8px;
+    }
+    .about-box h4 { font-size: 13px; font-weight: 700; color: #F472B6; margin-bottom: 8px; }
+    .about-box p { font-size: 12px; color: #D1D5DB; line-height: 1.7; }
+    .about-box .contact-line { font-size: 12px; color: #9CA3AF; margin-top: 10px; }
+    .about-box a { color: #F472B6; }
+
+    .doc-footer {
+      margin-top: 40px; padding-top: 16px; border-top: 1px solid #E5E7EB;
+      text-align: center; font-size: 11px; color: #9CA3AF;
+    }
+    .doc-footer a { color: #9CA3AF; }
+
+    @media print {
+      body { padding: 20px; font-size: 11pt; }
+      .finding { page-break-inside: avoid; }
+      .rec { page-break-inside: avoid; }
+      .accent-line, .exec-summary, .finding-number, .rec-priority, .about-box {
+        -webkit-print-color-adjust: exact; print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="doc-logo">
+    <svg width="36" height="46" viewBox="0 0 56 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 42 8 C 58 8 58 34 28 34 C -2 34 -2 60 14 60" stroke="#E91E8C" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <circle cx="42" cy="8" r="6.5" fill="#E91E8C"/>
+      <circle cx="42" cy="8" r="3" fill="#fff"/>
+      <circle cx="28" cy="34" r="5" fill="#C2185B"/>
+      <circle cx="28" cy="34" r="2" fill="#fff"/>
+      <circle cx="14" cy="60" r="6.5" fill="#E91E8C"/>
+      <polygon points="11,57 17,60 11,63" fill="#fff"/>
+    </svg>
+    <div class="doc-logo-text">
+      <h1>SM Agent</h1>
+      <p>AI Automation</p>
+    </div>
+  </div>
+  <div class="doc-contact">
+    Sakina Moutaki<br>
+    <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a><br>
+    +49 176 814 87202<br>
+    www.smagent.com
+  </div>
+</div>
+<div class="accent-line"></div>
+
+<!-- REPORT TITLE -->
+<div class="report-header">
+  <div>
+    <h2>AUTOMATION AUDIT</h2>
+    <div class="client-name">[Company Name]</div>
+  </div>
+  <div class="report-meta">
+    <div><strong>Client:</strong> [Client Name]</div>
+    <div><strong>Date:</strong> [YYYY-MM-DD]</div>
+    <div><strong>Reference:</strong> AUDIT-[YYYY]-[NNN]</div>
+    <div><strong>Prepared by:</strong> Sakina Moutaki</div>
+  </div>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<h3>Executive Summary</h3>
+<div class="exec-summary">
+  [3–4 sentences: what was audited, the overall finding, and the single most important recommendation. Plain language — no jargon.]
+</div>
+
+<!-- CURRENT STATE -->
+<h3>Current State — Tools & Systems</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width:30%">Tool / System</th>
+      <th style="width:25%">Purpose</th>
+      <th>How It's Currently Used</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[Tool name]</td>
+      <td>[What it's for]</td>
+      <td>[How the client uses it now]</td>
+    </tr>
+    <tr>
+      <td>[Tool name]</td>
+      <td>[What it's for]</td>
+      <td>[How the client uses it now]</td>
+    </tr>
+    <tr>
+      <td>[Add rows as needed]</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Current State — Processes</h3>
+<p style="color:#374151;font-size:13px;line-height:1.8">[Brief description of how the client currently runs the processes being audited. What's manual, what's automated, what's missing.]</p>
+
+<!-- FINDINGS -->
+<h3>Findings</h3>
+
+<div class="finding">
+  <div class="finding-header">
+    <div class="finding-number">1</div>
+    <div class="finding-title">[Finding title]</div>
+  </div>
+  <div class="finding-body">
+    <div class="finding-label">What we found</div>
+    <div class="finding-text">[One paragraph — what's happening, what evidence supports it.]</div>
+    <div class="finding-label">Impact</div>
+    <div class="impact-text">[What this costs the client in time, money, or quality.]</div>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="finding-header">
+    <div class="finding-number">2</div>
+    <div class="finding-title">[Finding title]</div>
+  </div>
+  <div class="finding-body">
+    <div class="finding-label">What we found</div>
+    <div class="finding-text">[One paragraph]</div>
+    <div class="finding-label">Impact</div>
+    <div class="impact-text">[Time / money / quality cost]</div>
+  </div>
+</div>
+
+<div class="finding">
+  <div class="finding-header">
+    <div class="finding-number">3</div>
+    <div class="finding-title">[Finding title]</div>
+  </div>
+  <div class="finding-body">
+    <div class="finding-label">What we found</div>
+    <div class="finding-text">[One paragraph]</div>
+    <div class="finding-label">Impact</div>
+    <div class="impact-text">[Time / money / quality cost]</div>
+  </div>
+</div>
+
+<!-- RECOMMENDATIONS -->
+<h3>Recommendations</h3>
+
+<div class="rec">
+  <div class="rec-priority">P1</div>
+  <div class="rec-content">
+    <h4>[Recommendation title — do this first]</h4>
+    <p>[What to do, how to do it, expected outcome. Plain language.]</p>
+  </div>
+</div>
+<div class="rec">
+  <div class="rec-priority">P2</div>
+  <div class="rec-content">
+    <h4>[Recommendation title]</h4>
+    <p>[What to do, how to do it, expected outcome.]</p>
+  </div>
+</div>
+<div class="rec">
+  <div class="rec-priority">P3</div>
+  <div class="rec-content">
+    <h4>[Recommendation title]</h4>
+    <p>[What to do, how to do it, expected outcome.]</p>
+  </div>
+</div>
+
+<!-- ACTION PLAN -->
+<h3>Prioritised Action Plan</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width:8%">Priority</th>
+      <th style="width:32%">Action</th>
+      <th style="width:15%">Owner</th>
+      <th style="width:15%">Timeline</th>
+      <th>Expected Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center;font-weight:700;color:#E91E8C">1</td>
+      <td>[Action]</td>
+      <td>[Client / SM Agent]</td>
+      <td>Week 1</td>
+      <td>[What improves]</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;font-weight:700;color:#E91E8C">2</td>
+      <td>[Action]</td>
+      <td>[Client / SM Agent]</td>
+      <td>Week 2</td>
+      <td>[What improves]</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;font-weight:700;color:#E91E8C">3</td>
+      <td>[Action]</td>
+      <td>[Client / SM Agent]</td>
+      <td>Week 3</td>
+      <td>[What improves]</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ABOUT SM AGENT -->
+<h3>About SM Agent</h3>
+<div class="about-box">
+  <h4>Who We Are</h4>
+  <p>SM Agent designs and builds AI-powered automation for SMEs. We map your operations, automate what slows you down, and hand it over ready to run — no black box, full documentation, ongoing support available.</p>
+  <div class="contact-line">
+    Sakina Moutaki &nbsp;·&nbsp;
+    <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a> &nbsp;·&nbsp;
+    +49 176 814 87202 &nbsp;·&nbsp; www.smagent.com
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  Sakina Moutaki &nbsp;·&nbsp; SM Agent &nbsp;·&nbsp;
+  <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a> &nbsp;·&nbsp;
+  +49 176 814 87202 &nbsp;·&nbsp; www.smagent.com
+  <br><span style="margin-top:4px;display:block">Automation Audit Report — [Company Name] — [YYYY-MM-DD]</span>
+</div>
+
+</body>
+</html>

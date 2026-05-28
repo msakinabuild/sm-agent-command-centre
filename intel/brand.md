@@ -1,81 +1,159 @@
-# Brand — SM Agent
+# Brand Identity — SM Agent
 
 *Last updated: 2026-05-28*
 
 ---
 
-## Logo Files
+## Logo
+
+### Files
 
 | File | Use |
 |------|-----|
-| `brand/logo.svg` | Full wordmark — documents, website header, proposals |
-| `brand/logo-icon.svg` | Icon only — profile photo, favicon, small spaces |
-| `brand/logo-dark.svg` | Wordmark for dark backgrounds |
+| `brand/logo.svg` | Full wordmark — proposals, quotes, website header, presentations |
+| `brand/logo-icon.svg` | Icon only — profile photo, favicon, small spaces, app icons |
+| `brand/logo-dark.svg` | Full wordmark on dark backgrounds |
 
-**Usage rules:**
-- Never stretch or distort the logo
-- Never recolour the logo
-- Minimum size: icon 32px, wordmark 120px wide
-- Clear space: leave at least half the icon width of space around the logo
+### The Mark
+The SM Agent logo is an **S-curve automation flow** — three connected nodes on an S-shaped path. It represents:
+- Input → process → output (the automation journey)
+- The "S" of SM
+- Continuous, intelligent workflow
+
+### Usage Rules
+- **Minimum size:** Icon 32px · Full wordmark 140px wide
+- **Clear space:** Leave at least half the icon width of empty space around the logo on all sides
+- **Never:** Stretch, rotate, recolour, add effects, or place on busy backgrounds
+- **On dark backgrounds:** Use `logo-dark.svg` only
 
 ---
 
 ## Colour Palette
 
-| Name | Hex | Use |
-|------|-----|-----|
-| **Pink** (Primary) | `#E91E8C` | Logo, CTAs, highlights, links, accent elements |
-| **Pink Dark** | `#C2185B` | Hover states, pressed states |
-| **Pink Light** | `#FDF2F8` | Background tints, card highlights |
-| **Dark Grey** | `#1F2937` | Headings, primary body text |
-| **Mid Grey** | `#6B7280` | Secondary text, captions, metadata |
-| **Light Grey** | `#F9FAFB` | Page sections, card backgrounds |
-| **Border Grey** | `#E5E7EB` | Dividers, table borders, card outlines |
-| **White** | `#FFFFFF` | Document backgrounds, text on dark |
+| Name | Hex | RGB | Use |
+|------|-----|-----|-----|
+| **Pink** (Primary) | `#E91E8C` | 233, 30, 140 | Logo, buttons, CTAs, accent lines, highlights |
+| **Pink Dark** | `#C2185B` | 194, 24, 91 | Hover states, pressed, mid-node in logo |
+| **Pink Light** | `#FDF2F8` | 253, 242, 248 | Tinted backgrounds, highlighted boxes, badge bg |
+| **Dark Grey** | `#1F2937` | 31, 41, 55 | Headings, primary body text |
+| **Mid Grey** | `#6B7280` | 107, 114, 128 | Secondary text, captions, metadata, footers |
+| **Light Grey** | `#F9FAFB` | 249, 250, 251 | Page/section backgrounds, table header rows |
+| **Border Grey** | `#E5E7EB` | 229, 235, 235 | Dividers, table borders, card outlines |
+| **White** | `#FFFFFF` | 255, 255, 255 | Document backgrounds, text on dark |
+
+### Do Not Use
+- Random brand colours not in this palette
+- Unapproved gradients outside the logo
+- Pure black (#000000) for text — use Dark Grey instead
 
 ---
 
 ## Typography
 
-No custom font needed — system fonts are fast and professional.
+No custom font required. Use the system font stack for speed and consistency.
 
-| Element | Style |
-|---------|-------|
-| Headings | System sans-serif, weight 700–800 |
-| Body | System sans-serif, weight 400 |
-| Base size | 16px |
-| Line height | 1.6 |
-| Letter spacing (headings) | −0.02em |
+```css
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+```
 
----
-
-## Document Style
-
-All documents — invoices, quotes, audit reports — follow this style:
-- White (`#FFFFFF`) background
-- Dark grey (`#1F2937`) for headings
-- Mid grey (`#6B7280`) for secondary text and metadata
-- Pink (`#E91E8C`) for highlights, links, or section accents
-- Light grey (`#E5E7EB`) for table borders and dividers
+| Element | Size | Weight | Colour |
+|---------|------|--------|--------|
+| Document title / H1 | 24px / 18pt | 800 | Dark Grey |
+| Section heading / H2 | 16px / 12pt | 700 | Dark Grey |
+| Subheading / H3 | 14px / 11pt | 600 | Dark Grey |
+| Body text | 14px / 11pt | 400 | Dark Grey |
+| Secondary / metadata | 12px / 9pt | 400 | Mid Grey |
+| Table header | 12px / 9pt | 600 | Dark Grey |
+| Tagline / labels | 10px / 8pt | 400 | Mid Grey |
+| Letter spacing (headings) | −0.02em | | |
+| Line height (body) | 1.6 | | |
 
 ---
 
-## Social / Profile
+## Document Style System
 
-- **LinkedIn banner background:** Pink (`#E91E8C`) or white
-- **Profile photo background:** White or pink
-- **Post images:** White background, dark grey text, pink accent
-- **Hashtags:** Keep to 3–5 relevant tags per post
+All client-facing documents — invoices, quotes, audit reports — follow this system.
+
+### Header
+```
+[S-curve logo mark]  SM Agent              Sakina Moutaki
+                     AI Automation         msakina.build@gmail.com
+                                           +49 176 814 87202
+                                           www.smagent.com
+─────────────────────────────────────────── (pink #E91E8C, 2px line)
+```
+
+### Section Headings
+- Dark grey (`#1F2937`), weight 700
+- 3px pink (`#E91E8C`) left border, 12px left padding
+- 20px top margin, 10px bottom margin
+
+### Tables
+- Header row: light grey (`#F9FAFB`) background, dark grey text, weight 600
+- Body rows: white background, alternating optional
+- Borders: `#E5E7EB`, 1px solid
+- Cell padding: 10px 14px
+- Totals row: pink light (`#FDF2F8`) background, weight 700
+
+### Highlighted Boxes (Executive Summary, Key Info)
+- Background: `#FDF2F8` (pink light)
+- Left border: 3px solid `#E91E8C`
+- Padding: 16px 20px
+- Text: dark grey
+
+### Footer
+```
+─────────────────────────────────────────── (border grey, 1px)
+Sakina Moutaki · SM Agent · msakina.build@gmail.com · +49 176 814 87202 · www.smagent.com
+```
+- Text: mid grey (`#6B7280`), 10px, centred
+
+### Print
+- White background throughout (no colour fills except accents)
+- Font size: 11pt body
+- Margins: 20mm
+- Page break: avoid breaking tables, keep findings together
 
 ---
 
-## Voice (reminder)
+## Email Signature
+
+```
+Sakina Moutaki
+Founder, SM Agent
+msakina.build@gmail.com
++49 176 814 87202
+www.smagent.com
+```
+
+Plain text only — no HTML signatures in Gmail for now.
+
+---
+
+## Social Media — LinkedIn
+
+### Profile
+- Profile photo: professional, white or light background
+- Banner: pink (`#E91E8C`) background with "SM Agent | AI Automation" in white, or clean photo
+
+### Post Format
+- Open with the point — no warm-up
+- Short paragraphs (1–2 sentences)
+- 150–300 words
+- End with a clear takeaway or question
+- 3–5 relevant hashtags
+- Never post without Sakina's review (use `/social-media-post` blueprint)
+
+---
+
+## Voice (Reference)
 
 | Context | Tone |
 |---------|------|
-| Internal | Informal, direct, no ceremony |
-| External (client-facing) | Professional but warm, confident, no jargon |
+| Internal (just us) | Informal, direct, no ceremony |
+| Client-facing | Professional but warm — confident, no jargon, short paragraphs |
+| Social media | Honest, opinionated, practical — not corporate |
 
 ---
 
-*Update this file when brand decisions change. Log in decisions/ledger.md.*
+*Update this file when brand decisions change. Log the decision in decisions/ledger.md.*

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invoice [INV-YYYY-NNN] — SM Agent</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-size: 14px; line-height: 1.6; color: #1F2937;
+      background: #fff; padding: 40px;
+      max-width: 860px; margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .doc-logo { display: flex; align-items: center; gap: 14px; }
+    .doc-logo-text h1 { font-size: 20px; font-weight: 800; color: #1F2937; letter-spacing: -0.03em; }
+    .doc-logo-text p { font-size: 9px; color: #9CA3AF; letter-spacing: 2px; text-transform: uppercase; margin-top: 1px; }
+    .doc-contact { text-align: right; font-size: 12px; color: #6B7280; line-height: 1.8; }
+    .doc-contact a { color: #6B7280; }
+    .accent-line { height: 2px; background: #E91E8C; margin-bottom: 28px; border-radius: 1px; }
+
+    /* ── INVOICE TITLE ── */
+    .invoice-title {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .invoice-title h2 {
+      font-size: 28px; font-weight: 800; color: #E91E8C; letter-spacing: -0.04em;
+    }
+    .invoice-meta { text-align: right; font-size: 12px; color: #6B7280; line-height: 2; }
+    .invoice-meta strong { color: #1F2937; }
+
+    /* ── FROM / TO ── */
+    .parties { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .party-label { font-size: 9px; font-weight: 700; color: #E91E8C; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .party-name { font-size: 15px; font-weight: 700; color: #1F2937; margin-bottom: 2px; }
+    .party-detail { font-size: 12px; color: #6B7280; line-height: 1.8; }
+
+    /* ── SECTION HEADINGS ── */
+    h3 {
+      font-size: 11px; font-weight: 700; color: #1F2937;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      border-left: 3px solid #E91E8C; padding-left: 10px;
+      margin: 28px 0 12px;
+    }
+
+    /* ── TABLES ── */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th {
+      background: #F9FAFB; color: #1F2937;
+      font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 10px 14px; border: 1px solid #E5E7EB; text-align: left;
+    }
+    td { padding: 10px 14px; border: 1px solid #E5E7EB; color: #374151; }
+    .col-num { width: 5%; text-align: center; color: #9CA3AF; }
+    .col-desc { width: 45%; }
+    .col-qty, .col-rate { width: 15%; text-align: right; }
+    .col-amount { width: 20%; text-align: right; font-weight: 600; }
+
+    /* ── TOTALS ── */
+    .totals { width: 320px; margin-left: auto; margin-top: 16px; }
+    .totals-row { display: flex; justify-content: space-between; padding: 7px 14px; font-size: 13px; }
+    .totals-row.subtotal { color: #6B7280; border-top: 1px solid #E5E7EB; }
+    .totals-row.tax { color: #6B7280; }
+    .totals-row.total {
+      background: #FDF2F8; border: 1px solid #E91E8C; border-radius: 6px;
+      font-size: 15px; font-weight: 800; color: #E91E8C; margin-top: 6px;
+    }
+
+    /* ── PAYMENT & BANK ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+    .info-block { font-size: 12px; line-height: 1.9; color: #374151; }
+    .info-block strong { color: #1F2937; }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      margin-top: 40px; padding-top: 16px; border-top: 1px solid #E5E7EB;
+      text-align: center; font-size: 11px; color: #9CA3AF;
+    }
+    .doc-footer a { color: #9CA3AF; }
+    .thank-you {
+      text-align: center; margin-top: 28px; padding: 14px;
+      background: #FDF2F8; border-radius: 8px;
+      font-size: 13px; color: #C2185B; font-style: italic;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { padding: 20px; font-size: 11pt; }
+      .accent-line { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .totals-row.total { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="doc-logo">
+    <svg width="36" height="46" viewBox="0 0 56 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 42 8 C 58 8 58 34 28 34 C -2 34 -2 60 14 60" stroke="#E91E8C" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <circle cx="42" cy="8" r="6.5" fill="#E91E8C"/>
+      <circle cx="42" cy="8" r="3" fill="#fff"/>
+      <circle cx="28" cy="34" r="5" fill="#C2185B"/>
+      <circle cx="28" cy="34" r="2" fill="#fff"/>
+      <circle cx="14" cy="60" r="6.5" fill="#E91E8C"/>
+      <polygon points="11,57 17,60 11,63" fill="#fff"/>
+    </svg>
+    <div class="doc-logo-text">
+      <h1>SM Agent</h1>
+      <p>AI Automation</p>
+    </div>
+  </div>
+  <div class="doc-contact">
+    Sakina Moutaki<br>
+    <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a><br>
+    +49 176 814 87202<br>
+    www.smagent.com
+  </div>
+</div>
+<div class="accent-line"></div>
+
+<!-- INVOICE TITLE + META -->
+<div class="invoice-title">
+  <h2>INVOICE</h2>
+  <div class="invoice-meta">
+    <div><strong>Invoice Number:</strong> [INV-YYYY-NNN]</div>
+    <div><strong>Invoice Date:</strong> [YYYY-MM-DD]</div>
+    <div><strong>Due Date:</strong> [YYYY-MM-DD]</div>
+  </div>
+</div>
+
+<!-- FROM / TO -->
+<div class="parties">
+  <div>
+    <div class="party-label">From</div>
+    <div class="party-name">Sakina Moutaki</div>
+    <div class="party-detail">
+      SM Agent<br>
+      msakina.build@gmail.com<br>
+      +49 176 814 87202
+    </div>
+  </div>
+  <div>
+    <div class="party-label">Billed To</div>
+    <div class="party-name">[Client Name]</div>
+    <div class="party-detail">
+      [Company Name]<br>
+      [Client Address]<br>
+      [Client Email]
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES TABLE -->
+<h3>Services Rendered</h3>
+<table>
+  <thead>
+    <tr>
+      <th class="col-num">#</th>
+      <th class="col-desc">Description</th>
+      <th class="col-qty">Qty</th>
+      <th class="col-rate">Rate ($)</th>
+      <th class="col-amount">Amount ($)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="col-num">1</td>
+      <td>[Service or deliverable description]</td>
+      <td class="col-qty" style="text-align:right">1</td>
+      <td class="col-rate">[rate]</td>
+      <td class="col-amount">[amount]</td>
+    </tr>
+    <tr>
+      <td class="col-num">2</td>
+      <td>[Service or deliverable description]</td>
+      <td class="col-qty" style="text-align:right">1</td>
+      <td class="col-rate">[rate]</td>
+      <td class="col-amount">[amount]</td>
+    </tr>
+    <tr>
+      <td class="col-num">3</td>
+      <td>[Add rows as needed]</td>
+      <td class="col-qty"></td>
+      <td class="col-rate"></td>
+      <td class="col-amount"></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- TOTALS -->
+<div class="totals">
+  <div class="totals-row subtotal"><span>Subtotal</span><span>$[subtotal]</span></div>
+  <div class="totals-row tax"><span>Tax / VAT</span><span>$[tax or N/A]</span></div>
+  <div class="totals-row total"><span>Total Due</span><span>$[total]</span></div>
+</div>
+
+<!-- PAYMENT TERMS + BANK -->
+<div class="two-col">
+  <div>
+    <h3>Payment Terms</h3>
+    <div class="info-block">
+      Payment due within <strong>30 days</strong> of invoice date.<br>
+      50% deposit received upfront. Balance due on delivery.
+    </div>
+  </div>
+  <div>
+    <h3>Bank Details</h3>
+    <div class="info-block">
+      <strong>Account Name:</strong> [Name]<br>
+      <strong>Bank:</strong> [Bank name]<br>
+      <strong>IBAN:</strong> [IBAN]<br>
+      <strong>SWIFT/BIC:</strong> [SWIFT]<br>
+      <strong>Reference:</strong> [Invoice number]
+    </div>
+  </div>
+</div>
+
+<div class="thank-you">Thank you for working with SM Agent.</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  Sakina Moutaki &nbsp;·&nbsp; SM Agent &nbsp;·&nbsp;
+  <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a> &nbsp;·&nbsp;
+  +49 176 814 87202 &nbsp;·&nbsp; www.smagent.com
+</div>
+
+</body>
+</html>
