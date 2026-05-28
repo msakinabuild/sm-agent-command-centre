@@ -77,31 +77,29 @@ At session start, read focus.md and state.md. Reference others as needed — nev
 
 | Tool | Purpose | Status |
 |------|---------|--------|
-| Gmail | Client and subcontractor comms | Aspirational |
-| Google Calendar | Scheduling | Aspirational |
-| Google Sheets | CRM | Aspirational |
-| Google Docs | Documents and deliverables | Aspirational |
+| Gmail | Client and subcontractor comms | Live |
+| Google Calendar | Scheduling | Live (via Zapier) |
+| Google Sheets | CRM | Live (confirmed working) |
+| Google Docs | Documents and deliverables | Live (via Google Drive MCP) |
 | LinkedIn | Client acquisition and presence | Aspirational |
 
-No MCP servers connected yet.
+MCP servers connected: Gmail, Google Drive, Google Calendar (via Zapier), Zapier (Google Sheets confirmed).
 
 ---
 
 ## Build Queue
 
-Workflows to turn into Equipment and Blueprints, ranked by frequency and time saved:
+| # | Workflow | Blueprint | Equipment | Status |
+|---|----------|-----------|-----------|--------|
+| 1 | Invoice creation | `blueprints/invoice-creation.md` | `equipment/track-invoice-number.py` | ✅ Built |
+| 2 | Quote generation | `blueprints/quote-generation.md` | None | ✅ Built |
+| 3 | Client onboarding | `blueprints/client-onboarding.md` | None | ✅ Built |
+| 4 | Email templates | `blueprints/email-templates.md` | None | ✅ Built |
+| 5 | Social media posts | `blueprints/social-media-post.md` | None | ✅ Built |
+| 6 | Audit report | `blueprints/audit-report.md` | None | ✅ Built |
+| 7 | Morning briefing | `blueprints/morning-briefing.md` | None | ✅ Built |
 
-1. **Invoice creation** ← Build this first
-2. **Quote generation**
-3. **Client onboarding**
-4. **Frequent question replies (email templates)**
-5. **Social media posts**
-6. **Audit template**
-7. **Morning briefing**
-
-To build any of these: say "Build a skill for [task]."
-
-These are semantic triggers, not exact strings. Any request expressing the same intent should activate the corresponding workflow.
+To trigger any workflow: use its trigger phrase (see each blueprint). These are semantic triggers — any request expressing the same intent activates the corresponding blueprint.
 
 ---
 

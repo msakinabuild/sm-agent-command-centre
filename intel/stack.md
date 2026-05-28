@@ -13,11 +13,16 @@
 ## Daily Tools
 | Tool | Purpose | Status |
 |------|---------|--------|
-| Gmail | Client and subcontractor communication | Aspirational (no live credentials yet) |
-| Google Calendar | Scheduling and day planning | Aspirational |
-| Google Sheets | CRM — lead and client tracking | Aspirational |
-| Google Docs | Documents and deliverables | Aspirational |
+| Gmail | Client and subcontractor communication | Live |
+| Google Calendar | Scheduling and day planning | Live (via Zapier) |
+| Google Sheets | CRM — lead and client tracking | Live (confirmed working) |
+| Google Docs | Documents and deliverables | Live (via Google Drive MCP) |
 | LinkedIn | Business presence and client acquisition | Aspirational |
 
 ## MCP Servers Connected
-None yet.
+| MCP | Status |
+|-----|--------|
+| Gmail MCP | Live |
+| Google Drive MCP | Live |
+| Google Calendar MCP | Live (via Zapier) |
+| Zapier MCP | Live — Google Sheets read/write confirmed working |

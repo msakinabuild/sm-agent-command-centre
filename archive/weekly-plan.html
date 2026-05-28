@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM Agent — Weekly Plan 7 May 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    color: #1a1a1a;
+    background: #fff;
+    padding: 36px 44px;
+  }
+  header {
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+  }
+  header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  header .sub {
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+  }
+  .deadline-banner {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+  }
+  .deadline-banner span { color: #f0c040; }
+
+  .section {
+    margin-bottom: 22px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .q1 .badge { background: #fde8e8; color: #b91c1c; }
+  .q2 .badge { background: #e8f5e9; color: #1a6a2e; }
+  .q3 .badge { background: #fff8e1; color: #92680a; }
+  .q4 .badge { background: #f0f0f0; color: #555; }
+
+  .section-header h2 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .section-header .desc {
+    font-size: 11px;
+    color: #777;
+    font-style: italic;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  th {
+    background: #f5f5f5;
+    text-align: left;
+    padding: 7px 10px;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #444;
+  }
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+    line-height: 1.4;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .q1 table td:first-child { font-weight: 600; }
+  .do-by {
+    font-weight: 700;
+    color: #b91c1c;
+    white-space: nowrap;
+  }
+
+  .first-actions {
+    margin-top: 24px;
+    border: 2px solid #1a1a1a;
+    border-radius: 6px;
+    padding: 16px 20px;
+  }
+  .first-actions h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .action-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .action-row:last-child { margin-bottom: 0; }
+  .action-number {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .action-text { font-size: 12px; line-height: 1.5; }
+  .action-text strong { font-weight: 700; }
+
+  .time-dist {
+    margin-top: 22px;
+  }
+  .time-dist h3 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+    font-size: 11.5px;
+  }
+  .bar-label { width: 110px; font-weight: 600; flex-shrink: 0; }
+  .bar-track {
+    flex: 1;
+    background: #f0f0f0;
+    border-radius: 4px;
+    height: 14px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+  }
+  .bar-fill.q1f { background: #b91c1c; }
+  .bar-fill.q2f { background: #1a6a2e; }
+  .bar-fill.q3f { background: #92680a; }
+  .bar-fill.q4f { background: #aaa; }
+  .bar-pct { width: 40px; text-align: right; color: #555; font-size: 11px; }
+
+  footer {
+    margin-top: 28px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    font-size: 10px;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SM Agent — Weekly Priority Plan</h1>
+  <div class="sub">Sakina &nbsp;·&nbsp; Week of 7 May 2026 &nbsp;·&nbsp; Eisenhower Matrix</div>
+</header>
+
+<div class="deadline-banner">
+  Agency opening: <span>May 15, 2026</span> &nbsp;—&nbsp; 8 days remaining. Three things matter before that date: website live, pricing decided, HR client delivered.
+</div>
+
+<!-- Q1 -->
+<div class="section q1">
+  <div class="section-header">
+    <span class="badge">Q1</span>
+    <h2>DO — Handle these now</h2>
+    <span class="desc">Urgent + Important</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Why Urgent</th>
+        <th>Why Important</th>
+        <th>Do By</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Website / landing page</td>
+        <td>8 days to opening — clients will Google you</td>
+        <td>Primary trust signal and client acquisition tool</td>
+        <td class="do-by">May 12</td>
+      </tr>
+      <tr>
+        <td>Pricing structure</td>
+        <td>No sales conversation possible without it</td>
+        <td>Pricing is the decision that unlocks revenue</td>
+        <td class="do-by">May 10</td>
+      </tr>
+      <tr>
+        <td>HR Consultant Automation delivery</td>
+        <td>Active client deadline May 15</td>
+        <td>Revenue + first case study for the agency</td>
+        <td class="do-by">May 15</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Q2 -->
+<div class="section q2">
+  <div class="section-header">
+    <span class="badge">Q2</span>
+    <h2>SCHEDULE — Block time this week</h2>
+    <span class="desc">Not Urgent + Important</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Why Important</th>
+        <th>Schedule For</th>
+        <th>Time Needed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Client outreach (finding clients)</td>
+        <td>#1 stated priority — nothing else matters without pipeline</td>
+        <td>Daily 90-min block, starting tomorrow</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>Invoice creation workflow</td>
+        <td>Needed the moment a client signs</td>
+        <td>May 19–21 (post-launch week)</td>
+        <td>3–4 hrs</td>
+      </tr>
+      <tr>
+        <td>Client onboarding workflow</td>
+        <td>Defines the experience every client gets</td>
+        <td>May 19–22</td>
+        <td>3–4 hrs</td>
+      </tr>
+      <tr>
+        <td>Define Q2 goals</td>
+        <td>Strategic clarity drives every other decision</td>
+        <td>May 16 (day after launch)</td>
+        <td>2 hrs</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Q3 -->
+<div class="section q3">
+  <div class="section-header">
+    <span class="badge">Q3</span>
+    <h2>DELEGATE — Let AI handle these</h2>
+    <span class="desc">Urgent + Not Important</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Why Urgent</th>
+        <th>Who</th>
+        <th>Delegation Plan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Quote generation workflow</td>
+        <td>Pre-launch target but doesn't need you</td>
+        <td>Claude</td>
+        <td>One session — scaffold from existing proposal blueprint</td>
+      </tr>
+      <tr>
+        <td>Google Sheets CRM structure</td>
+        <td>Operational need before first client</td>
+        <td>Claude</td>
+        <td>One session — define columns, build template</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Q4 -->
+<div class="section q4">
+  <div class="section-header">
+    <span class="badge">Q4</span>
+    <h2>ELIMINATE — Stop spending time here</h2>
+    <span class="desc">Not Urgent + Not Important</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Why Are You Doing This?</th>
+        <th>Elimination Strategy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>"Define scope for HR Automation"</td>
+        <td>Listed as open but project is already active — stale task</td>
+        <td>Remove it. Scope is defined, project is in delivery.</td>
+      </tr>
+      <tr>
+        <td>Building all 3 workflows before May 15</td>
+        <td>Overscoped for an 8-day sprint</td>
+        <td>Cut to 1 (invoice). Push the rest to post-launch week.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Time Distribution -->
+<div class="time-dist">
+  <h3>Target Time Distribution — Next 8 Days</h3>
+  <div class="bar-row">
+    <span class="bar-label">Q1: Do</span>
+    <div class="bar-track"><div class="bar-fill q1f" style="width:50%"></div></div>
+    <span class="bar-pct">50%</span>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Q2: Schedule</span>
+    <div class="bar-track"><div class="bar-fill q2f" style="width:35%"></div></div>
+    <span class="bar-pct">35%</span>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Q3: Delegate</span>
+    <div class="bar-track"><div class="bar-fill q3f" style="width:15%"></div></div>
+    <span class="bar-pct">15%</span>
+  </div>
+  <div class="bar-row">
+    <span class="bar-label">Q4: Eliminate</span>
+    <div class="bar-track"><div class="bar-fill q4f" style="width:0%"></div></div>
+    <span class="bar-pct">0%</span>
+  </div>
+</div>
+
+<!-- First Actions -->
+<div class="first-actions">
+  <h3>First Actions</h3>
+  <div class="action-row">
+    <div class="action-number">1</div>
+    <div class="action-text"><strong>Do now:</strong> Lock pricing structure — even rough tiers. You need this before any sales conversation.</div>
+  </div>
+  <div class="action-row">
+    <div class="action-number">2</div>
+    <div class="action-text"><strong>Schedule this week:</strong> 90 mins tomorrow for client outreach — identify 10 people to contact before May 15.</div>
+  </div>
+  <div class="action-row">
+    <div class="action-number">3</div>
+    <div class="action-text"><strong>Delegate today:</strong> Say "Build the quote generation workflow" and let Claude run it.</div>
+  </div>
+</div>
+
+<footer>
+  <span>SM Agent &nbsp;·&nbsp; Confidential</span>
+  <span>Generated 7 May 2026</span>
+</footer>
+
+</body>
+</html>

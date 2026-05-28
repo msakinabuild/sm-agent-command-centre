@@ -3,6 +3,10 @@
 *Updated at the end of each session. Read this FIRST on startup.*
 
 ## Last Session
+- **Date:** 2026-05-28
+- **Summary:** System audit and maintenance. Updated intel files (stack, focus, wins), synced tasks.md, backfilled decision ledger, archived stale .tmp files and code-reviewer agent. Built 5 missing blueprints (invoice, quote, email-templates, social-media-post, audit-report), 3 missing templates (invoice, quote, audit-report), track-invoice-number.py equipment, and updated CLAUDE.md tool stack and build queue.
+
+## Previous Session
 - **Date:** 2026-05-12
 - **Summary:** Built the Marketing Research Subagent — a full Three Engine Model workflow covering research, analysis, copywriting, Google Drive report creation, and Gmail draft delivery. Copywriting skill created and live. Blueprint written. Agent definition added.
 
@@ -44,9 +48,11 @@
 - [ ] Define scope for HR Consultant Automation project
 
 ## Current Priorities
-1. Overdue pipeline follow-ups (6 leads need action today)
-2. Hala Ventures intro call prep — 10 May
-3. Invoice workflow + website + pricing — all due before 15 May
+1. Overdue pipeline follow-ups — Lunara, Tahseen, Dahab, Najim Travel, Cotton & Stitch — action today
+2. Foster & Marsh — review Gmail draft and send
+3. Invoice workflow build — top of build queue, overdue
+4. HR Consultant Automation — confirm status with client (deadline was 2026-05-15)
+5. Hala Ventures — call was 2026-05-10, confirm outcome and next step
 
 ## Active Projects
 - **HR Consultant Automation** — Active. Client onboarding, data scraping, market research. Deadline: 2026-05-15

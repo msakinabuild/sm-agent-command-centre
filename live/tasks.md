@@ -1,15 +1,35 @@
 # Task Tracker
 
 *Persistent task list. Updated during and between sessions.*
-*Format: - [ ] Task description | Source: [where it came from] | Due: [date or "none"]*
+*Ground truth for open work. Keep in sync with live/state.md Open Tasks.*
 
 ---
 
-- [ ] Define Q2 quarterly goals | Source: onboarding | Due: next session
-- [ ] Set up Google Sheets CRM structure | Source: onboarding | Due: none
-- [ ] Build invoice creation workflow | Source: onboarding — top priority | Due: before 2026-05-15
-- [ ] Build quote generation workflow | Source: onboarding | Due: before 2026-05-15
-- [ ] Build client onboarding workflow | Source: onboarding | Due: before 2026-05-15
-- [ ] Define scope for HR Consultant Automation project | Source: onboarding | Due: none
-- [ ] Website/landing page | Source: onboarding | Due: 2026-05-15
-- [ ] Work out pricing structure | Source: onboarding | Due: 2026-05-15
+## Overdue — Client Pipeline
+
+- [ ] Follow up: Lunara Handcare — discovery call overdue | Due: was 2026-04-29
+- [ ] Follow up: Tahseen Tutoring — discovery call overdue | Due: was 2026-04-30
+- [ ] Follow up: Dahab Wellness — discovery call overdue | Due: was 2026-05-01
+- [ ] Deliver audit report: Najim Travel | Due: was 2026-05-02
+- [ ] Deliver audit: Cotton & Stitch | Due: was 2026-04-30
+- [ ] Follow up Zayd Property — quote sent, no response | Due: none
+- [ ] Confirm Sahel Cafe Group kickoff status | Due: none
+
+## Overdue — Hala Ventures
+
+- [ ] Hala Ventures intro call was 2026-05-10 — confirm outcome and next step | Due: urgent
+
+## In Progress — Foster & Marsh
+
+- [ ] Review and send Foster & Marsh follow-up email (in Gmail drafts) | Due: today
+
+## Overdue — Build Queue
+
+- [ ] Build invoice creation workflow | Due: was 2026-05-15
+- [ ] Website / landing page live | Due: was 2026-05-15
+- [ ] Work out pricing structure | Due: was 2026-05-15
+
+## Open — Strategy
+
+- [ ] Define Q2 quarterly goals | Due: this week
+- [ ] Confirm HR Consultant Automation status with client (deadline was 2026-05-15) | Due: urgent
