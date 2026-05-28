@@ -4,11 +4,11 @@
 
 ## Last Session
 - **Date:** 2026-05-28
-- **Summary:** System audit and maintenance. Updated intel files (stack, focus, wins), synced tasks.md, backfilled decision ledger, archived stale .tmp files and code-reviewer agent. Built 5 missing blueprints (invoice, quote, email-templates, social-media-post, audit-report), 3 missing templates (invoice, quote, audit-report), track-invoice-number.py equipment, and updated CLAUDE.md tool stack and build queue.
+- **Summary:** Branding enforcement + new capabilities. Added mandatory branding rule (`.claude/rules/branding.md`), built 2 new HTML templates (proposal, social-media-post multi-platform), updated all 5 blueprints to wire in HTML templates for branded PDF output. Added PAID watermark to invoice template. Rebuilt social media blueprint v2.0 for LinkedIn + Instagram + Facebook. Set up 3 scheduled remote routines: Morning Briefing (Mon–Fri 8am), Pipeline Sweep (Mon 9am), LinkedIn Content Prompt (Wed 10am).
 
 ## Previous Session
-- **Date:** 2026-05-12
-- **Summary:** Built the Marketing Research Subagent — a full Three Engine Model workflow covering research, analysis, copywriting, Google Drive report creation, and Gmail draft delivery. Copywriting skill created and live. Blueprint written. Agent definition added.
+- **Date:** 2026-05-28
+- **Summary:** System audit and maintenance. Updated intel files (stack, focus, wins), synced tasks.md, backfilled decision ledger, archived stale .tmp files and code-reviewer agent. Built 5 missing blueprints (invoice, quote, email-templates, social-media-post, audit-report), 3 missing templates (invoice, quote, audit-report), track-invoice-number.py equipment, and updated CLAUDE.md tool stack and build queue.
 
 ## Blueprints Built
 - `blueprints/client-communication-handler.md` — Samir drafts replies, flags unknowns, logs exchanges
@@ -59,6 +59,20 @@
 - **Foster & Marsh Legal** — Negotiation. $12,000. Follow-up sent 2026-05-07, awaiting response.
 
 ## Tools and Files Created This Session
+- `.claude/rules/branding.md` — mandatory branding rule, auto-loaded every session
+- `templates/proposal.html` — new branded proposal template
+- `templates/social-media-post.html` — new multi-platform branded PDF (LinkedIn + Instagram + Facebook)
+- `templates/invoice.html` — updated with PAID watermark (activate by uncommenting one line)
+- `blueprints/invoice-creation.md` — HTML template step + Mark as Paid instructions added
+- `blueprints/quote-generation.md` — HTML template step added
+- `blueprints/audit-report.md` — HTML template step added
+- `blueprints/proposal-generation.md` — HTML template step added
+- `blueprints/social-media-post.md` — v2.0: three-platform drafting + multi-platform PDF
+- Scheduled routine: Morning Briefing — `trig_01Aj1vGTYxGnLQNF6mPD9H1E` (Mon–Fri 8am)
+- Scheduled routine: Pipeline Sweep — `trig_01M2T9pcJGN8qoKH8RrCP1Zy` (Mondays 9am)
+- Scheduled routine: LinkedIn Content Prompt — `trig_01QhDEUgEad9rH4DvaZSGjQV` (Wednesdays 10am)
+
+## Previous Session Files
 - Google Sheet: Tasks List (18 items, populated from pipeline + tasks.md + calendar)
 - Google Sheet: Leads & Pipeline_Sakina — Foster & Marsh updated to Negotiation
 - Gmail draft: Foster & Marsh follow-up email (awaiting Sakina review)
