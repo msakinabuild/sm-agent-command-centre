@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proposal — [Company Name] — SM Agent</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-size: 14px; line-height: 1.6; color: #1F2937;
+      background: #fff; padding: 40px;
+      max-width: 860px; margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .doc-logo { display: flex; align-items: center; gap: 14px; }
+    .doc-logo-text h1 { font-size: 20px; font-weight: 800; color: #1F2937; letter-spacing: -0.03em; }
+    .doc-logo-text p { font-size: 9px; color: #9CA3AF; letter-spacing: 2px; text-transform: uppercase; margin-top: 1px; }
+    .doc-contact { text-align: right; font-size: 12px; color: #6B7280; line-height: 1.8; }
+    .doc-contact a { color: #6B7280; }
+    .accent-line { height: 2px; background: #E91E8C; margin-bottom: 28px; border-radius: 1px; }
+
+    /* ── PROPOSAL TITLE ── */
+    .proposal-title {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .proposal-title h2 { font-size: 28px; font-weight: 800; color: #E91E8C; letter-spacing: -0.04em; }
+    .proposal-meta { text-align: right; font-size: 12px; color: #6B7280; line-height: 2; }
+    .proposal-meta strong { color: #1F2937; }
+
+    /* ── FROM / TO ── */
+    .parties { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .party-label { font-size: 9px; font-weight: 700; color: #E91E8C; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .party-name { font-size: 15px; font-weight: 700; color: #1F2937; margin-bottom: 2px; }
+    .party-detail { font-size: 12px; color: #6B7280; line-height: 1.8; }
+
+    /* ── SECTION HEADINGS ── */
+    h3 {
+      font-size: 11px; font-weight: 700; color: #1F2937;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      border-left: 3px solid #E91E8C; padding-left: 10px;
+      margin: 28px 0 12px;
+    }
+
+    /* ── HIGHLIGHTED BOX ── */
+    .highlight-box {
+      background: #FDF2F8; border-left: 3px solid #E91E8C;
+      padding: 16px 20px; border-radius: 0 6px 6px 0;
+      font-size: 14px; color: #374151; line-height: 1.7;
+    }
+
+    /* ── BULLET LIST ── */
+    .feature-list { list-style: none; margin-top: 4px; }
+    .feature-list li {
+      padding: 8px 0 8px 16px; border-bottom: 1px solid #F3F4F6;
+      font-size: 13px; color: #374151; line-height: 1.6;
+      position: relative;
+    }
+    .feature-list li::before {
+      content: "→";
+      color: #E91E8C; font-weight: 700;
+      position: absolute; left: 0;
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li strong { color: #1F2937; }
+
+    /* ── TABLES ── */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th {
+      background: #F9FAFB; color: #1F2937;
+      font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 10px 14px; border: 1px solid #E5E7EB; text-align: left;
+    }
+    td { padding: 10px 14px; border: 1px solid #E5E7EB; color: #374151; vertical-align: top; }
+    tr.total-row td {
+      background: #FDF2F8; font-weight: 700; color: #E91E8C;
+      font-size: 14px;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline-list { list-style: none; }
+    .timeline-list li {
+      padding: 8px 14px; border-left: 2px solid #E5E7EB;
+      margin-bottom: 6px; font-size: 13px; color: #374151;
+    }
+    .timeline-list li:first-child { border-left-color: #E91E8C; }
+
+    /* ── HOW THIS WORKS ── */
+    .process-steps {
+      display: flex; gap: 0; margin-top: 4px;
+    }
+    .process-step {
+      flex: 1; padding: 14px 16px; text-align: center;
+      border: 1px solid #E5E7EB; border-right: none;
+      font-size: 12px; color: #374151;
+    }
+    .process-step:last-child { border-right: 1px solid #E5E7EB; }
+    .process-step .step-num {
+      display: block; font-size: 18px; font-weight: 800;
+      color: #E91E8C; margin-bottom: 4px;
+    }
+    .process-step .step-label { font-weight: 600; color: #1F2937; display: block; margin-bottom: 2px; }
+
+    /* ── NEXT STEPS ── */
+    .next-steps-box {
+      background: #1F2937; color: #fff;
+      padding: 20px 24px; border-radius: 10px; margin-top: 8px;
+      font-size: 14px; line-height: 1.7;
+    }
+    .next-steps-box strong { color: #F472B6; }
+
+    /* ── VALIDITY ── */
+    .validity-note {
+      text-align: center; font-size: 11px; color: #9CA3AF;
+      margin-top: 24px; font-style: italic;
+    }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      margin-top: 40px; padding-top: 16px; border-top: 1px solid #E5E7EB;
+      text-align: center; font-size: 11px; color: #9CA3AF;
+    }
+    .doc-footer a { color: #9CA3AF; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { padding: 20px; font-size: 11pt; }
+      .accent-line { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .highlight-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      tr.total-row td { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .next-steps-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .process-step .step-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="doc-logo">
+    <svg width="36" height="46" viewBox="0 0 56 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 42 8 C 58 8 58 34 28 34 C -2 34 -2 60 14 60" stroke="#E91E8C" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <circle cx="42" cy="8" r="6.5" fill="#E91E8C"/>
+      <circle cx="42" cy="8" r="3" fill="#fff"/>
+      <circle cx="28" cy="34" r="5" fill="#C2185B"/>
+      <circle cx="28" cy="34" r="2" fill="#fff"/>
+      <circle cx="14" cy="60" r="6.5" fill="#E91E8C"/>
+      <polygon points="11,57 17,60 11,63" fill="#fff"/>
+    </svg>
+    <div class="doc-logo-text">
+      <h1>SM Agent</h1>
+      <p>AI Automation</p>
+    </div>
+  </div>
+  <div class="doc-contact">
+    Sakina Moutaki<br>
+    <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a><br>
+    +49 176 814 87202<br>
+    www.smagent.com
+  </div>
+</div>
+<div class="accent-line"></div>
+
+<!-- PROPOSAL TITLE + META -->
+<div class="proposal-title">
+  <h2>PROPOSAL</h2>
+  <div class="proposal-meta">
+    <div><strong>Prepared For:</strong> [Client Name], [Company Name]</div>
+    <div><strong>Date:</strong> [YYYY-MM-DD]</div>
+    <div><strong>Reference:</strong> [PROP-YYYY-NNN]</div>
+    <div><strong>Valid Until:</strong> [YYYY-MM-DD]</div>
+  </div>
+</div>
+
+<!-- FROM / TO -->
+<div class="parties">
+  <div>
+    <div class="party-label">Prepared By</div>
+    <div class="party-name">Sakina Moutaki</div>
+    <div class="party-detail">
+      SM Agent<br>
+      msakina.build@gmail.com<br>
+      +49 176 814 87202
+    </div>
+  </div>
+  <div>
+    <div class="party-label">Prepared For</div>
+    <div class="party-name">[Client Name]</div>
+    <div class="party-detail">
+      [Company Name]<br>
+      [Client Email]
+    </div>
+  </div>
+</div>
+
+<!-- THE OPPORTUNITY -->
+<h3>The Opportunity</h3>
+<div class="highlight-box">
+  [One paragraph: what the client is dealing with right now, and what becomes possible when it's solved. Written about them — not about SM Agent.]
+</div>
+
+<!-- WHAT WE'RE BUILDING -->
+<h3>What We're Building</h3>
+<ul class="feature-list">
+  <li><strong>[Service name]</strong> — [What it is and what it does for the client in plain language]</li>
+  <li><strong>[Service name]</strong> — [What it is and what it does for the client in plain language]</li>
+  <li><strong>[Service name]</strong> — [Add as needed]</li>
+</ul>
+
+<!-- DELIVERABLES -->
+<h3>Deliverables</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width:5%;text-align:center">#</th>
+      <th style="width:35%">Deliverable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center;color:#9CA3AF">1</td>
+      <td>[Deliverable name]</td>
+      <td>[What the client receives — concrete, specific]</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;color:#9CA3AF">2</td>
+      <td>[Deliverable name]</td>
+      <td>[What the client receives]</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;color:#9CA3AF">3</td>
+      <td>[Add as needed]</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- TIMELINE -->
+<h3>Timeline</h3>
+<ul class="timeline-list">
+  <li>Week 1 — [Discovery and scoping]</li>
+  <li>Weeks 2–4 — [Build and delivery]</li>
+  <li>Week 5 — [Handover and support]</li>
+</ul>
+<p style="font-size:12px;color:#6B7280;margin-top:8px;padding-left:16px">First deliverable by [date]. Full project complete by [date].</p>
+
+<!-- INVESTMENT -->
+<h3>Investment</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width:70%">Item</th>
+      <th style="width:30%;text-align:right">Amount ($)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[One-time setup / build fee]</td>
+      <td style="text-align:right">$[amount]</td>
+    </tr>
+    <tr>
+      <td>[Monthly retainer (if applicable)]</td>
+      <td style="text-align:right">$[amount]/month</td>
+    </tr>
+    <tr class="total-row">
+      <td>Total Investment</td>
+      <td style="text-align:right">$[total]</td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size:12px;color:#6B7280;margin-top:8px">50% deposit required to begin. Balance due on delivery.</p>
+
+<!-- HOW THIS WORKS -->
+<h3>How This Works</h3>
+<div class="process-steps">
+  <div class="process-step">
+    <span class="step-num">1</span>
+    <span class="step-label">Discovery</span>
+    Map your operations and confirm scope
+  </div>
+  <div class="process-step">
+    <span class="step-num">2</span>
+    <span class="step-label">Build</span>
+    Automate what slows you down
+  </div>
+  <div class="process-step">
+    <span class="step-num">3</span>
+    <span class="step-label">Handover</span>
+    Full documentation — ready to run
+  </div>
+  <div class="process-step">
+    <span class="step-num">4</span>
+    <span class="step-label">Support</span>
+    Ongoing support available
+  </div>
+</div>
+
+<!-- NEXT STEPS -->
+<h3>Next Steps</h3>
+<div class="next-steps-box">
+  <strong>Ready to move forward?</strong><br>
+  [Single clear action — e.g. "Reply to confirm and I'll send the agreement and payment link." or "Book a 30-minute call to finalise scope."]
+</div>
+
+<p class="validity-note">This proposal is valid until [date]. Prices are in USD and exclude VAT where applicable.</p>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  Sakina Moutaki &nbsp;·&nbsp; SM Agent &nbsp;·&nbsp;
+  <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a> &nbsp;·&nbsp;
+  +49 176 814 87202 &nbsp;·&nbsp; www.smagent.com
+  <br><span style="margin-top:4px;display:block">Proposal — [Company Name] — [YYYY-MM-DD]</span>
+</div>
+
+</body>
+</html>

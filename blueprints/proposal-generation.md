@@ -70,6 +70,14 @@ NEXT STEPS
 "Book a 30-minute call to finalise scope."]
 ```
 
+**Step 1b — Produce branded PDF**
+
+Read `templates/proposal.html`. Replace every `[placeholder]` with the approved proposal content — client details, date, reference, opportunity paragraph, feature list, deliverables table, timeline, investment table, how-it-works steps, and next steps.
+
+Output the complete populated HTML in a code block.
+
+Say: "Save this as `[company-name]-proposal-[date].html`, open it in a browser, and File → Print → Save as PDF. That's your branded proposal PDF."
+
 **Step 2 — Sanity check**
 
 Before creating the document, review the draft for:

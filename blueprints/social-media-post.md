@@ -1,9 +1,9 @@
 # Blueprint: Social Media Post
 
-**Version:** 1.0
-**Created:** 2026-05-28
-**Trigger:** "Write a social post about [topic]" or "post about [topic]" or "draft a LinkedIn post on [topic]"
-**Goal:** Draft a LinkedIn post in Sakina's voice, apply the copywriting skill, present for review. Never post directly.
+**Version:** 2.0
+**Updated:** 2026-05-28
+**Trigger:** "Write a social post about [topic]" or "post about [topic]" or "draft a [LinkedIn/Instagram/Facebook] post on [topic]"
+**Goal:** Draft platform-specific content for LinkedIn, Instagram, and Facebook in Sakina's voice. Deliver as a branded multi-platform PDF for review. Never post directly.
 **Equipment:** None — Architect handles natively
 
 ---
@@ -14,7 +14,18 @@ Before starting, confirm:
 - Topic or subject of the post
 - Any specific angle, message, or point Sakina wants to make
 - Any supporting facts, stats, or examples to include (optional)
+- Platforms needed (default: all three — LinkedIn, Instagram, Facebook)
 - Intended audience (default: SME owners and decision-makers in MENA)
+
+---
+
+## Platform Format Reference
+
+| Platform | Words | Hashtags | Tone |
+|----------|-------|----------|------|
+| LinkedIn | 150–300 | 3–5 | Professional, direct, insightful |
+| Instagram | 50–150 | 15–25 | Warmer, visual, more personal |
+| Facebook | 40–80 | 0–3 | Conversational, community-first |
 
 ---
 
@@ -26,66 +37,98 @@ Before drafting, answer: what is the one thing this post should make the reader 
 
 If the topic is broad or unclear, ask: "What's the main point you want to land with this post?"
 
-Do not draft until the point is clear.
+Do not draft until the point is clear. One idea — all three platforms carry the same core message, adapted for each audience.
 
-### Step 2: Draft the Post
+### Step 2: Draft — LinkedIn
 
-Write a LinkedIn post using Sakina's voice. Apply the copywriting skill principles from `.claude/skills/copywriting/SKILL.md`:
+Write the LinkedIn version first. Apply the copywriting skill from `.claude/skills/copywriting/SKILL.md`:
 
-- Open with the point — no warm-up filler. The first line must stop the scroll.
+- First line stops the scroll — surprising stat, direct claim, or short story opener
 - One idea per post. No cramming.
-- Short paragraphs — 1–2 sentences each. White space matters on LinkedIn.
-- No jargon. No corporate speak. No buzzwords.
-- End with a clear takeaway, question, or call to action — not a generic "what do you think?"
-- Keep it between 150–300 words. Under 150 if the point lands cleanly.
+- Short paragraphs — 1–2 sentences. White space matters.
+- No jargon, no corporate speak, no buzzwords
+- End with a clear takeaway, question, or call to action
+- 150–300 words. Under 150 if the point lands cleanly.
+- 3–5 hashtags at the end
 
-Structure:
+### Step 3: Adapt — Instagram
+
+Take the LinkedIn core message and adapt it for Instagram:
+
+- Shorter — 50–150 words max
+- Warmer, more personal tone — Sakina as a person, not just a business
+- Lead with the same hook but softer
+- Reference the visual if one is being posted alongside (ask if unclear)
+- 1–3 emojis where natural — never forced
+- 15–25 hashtags (mix of niche and broad: e.g. #AIAutomation #SMEOwners #MENA)
+- Hashtags can go at the end of the caption or as the first comment — note which
+
+### Step 4: Adapt — Facebook
+
+Take the LinkedIn core message and adapt it for Facebook:
+
+- 40–80 words — shortest of the three
+- Most conversational — like talking to a community, not an audience
+- Drop the formal structure. Just say the thing.
+- End with a direct question to encourage comments
+- 0–3 hashtags only (Facebook's algorithm doesn't reward heavy hashtag use)
+
+### Step 5: Quality Checklist
+
+Before presenting, confirm all three versions:
+- [ ] Same core message across all three — adapted, not just shortened
+- [ ] No jargon or buzzwords on any platform
+- [ ] LinkedIn: opens with hook, ends with takeaway
+- [ ] Instagram: warm, visual, hashtag count in range
+- [ ] Facebook: under 80 words, ends with a question
+- [ ] Tone is Sakina's — confident, not corporate, not performative
+
+### Step 6: Present All Three for Review
+
+Present all three drafts together with platform headers:
 
 ```
-[Hook — first line. Makes the reader stop. A surprising stat, a direct claim, or a short story opener.]
-
-[Context — 1–2 sentences setting up why this matters.]
-
-[The insight — the main thing you're sharing. Keep it tight.]
-
-[Evidence or example — one concrete example, stat, or observation.]
-
-[Takeaway or action — what the reader should think or do.]
-
-[Optional: question to prompt comment engagement]
-
-#[relevant hashtag] #[relevant hashtag]
-```
-
-### Step 3: Quality Checklist
-
-Before presenting, confirm:
-- [ ] No jargon or buzzwords
-- [ ] No sentence that could be cut without losing meaning
-- [ ] Opens with the point, not context-setting
-- [ ] Ends with a clear takeaway or question
-- [ ] Tone is confident, not corporate
-
-### Step 4: Present for Review
-
-Present the draft to Sakina with this header:
-
-```
-DRAFT LINKEDIN POST — NOT POSTED
-Topic: [topic]
+SOCIAL CONTENT DRAFT — [TOPIC] — NOT POSTED
 ---
-[post body]
+
+LINKEDIN (N words)
+[LinkedIn post]
+
 ---
-Word count: [N]
+
+INSTAGRAM (N words · N hashtags)
+[Instagram caption]
+[Hashtag block]
+
+---
+
+FACEBOOK (N words)
+[Facebook post]
+
+---
 ```
 
-Say: "Review the draft above. Edit as needed. I won't post without your explicit go-ahead."
+Say: "Review all three above. Edit as needed. I won't post to any platform without your explicit go-ahead."
 
-### Step 5: Confirm Before Posting
+### Step 7: Produce Branded PDF
 
-Wait for explicit confirmation from Sakina before taking any posting action. If a LinkedIn posting integration is available, describe the action and ask: "Post this now?"
+Once Sakina is happy with the drafts, read `templates/social-media-post.html` and replace every `[placeholder]`:
+- Topic, date, audience
+- LinkedIn content (preserving line breaks), hashtags, word count
+- Instagram caption, hashtag block (pink tags for primary, muted for secondary), counts
+- Facebook post, hashtags, word count
 
-If no posting integration is available: deliver the final draft for Sakina to copy and post manually.
+Output the complete populated HTML in a code block.
+
+Say: "Save this as `social-[topic]-[date].html`, open it in a browser, and File → Print → Save as PDF. That's your branded multi-platform content document."
+
+### Step 8: Confirm Before Posting
+
+Wait for explicit confirmation from Sakina before taking any posting action.
+
+If a posting integration is available, describe the action platform by platform and ask: "Post this to [platform] now?"
+
+If no posting integration is available: deliver the final drafts for Sakina to copy and post manually. Note which platforms still need manual posting.
 
 ---
 
@@ -95,16 +138,18 @@ If no posting integration is available: deliver the final draft for Sakina to co
 |-------|--------|
 | Topic too vague | Ask for the specific point before drafting |
 | Post feels too long | Cut to the single strongest idea. Everything else is a separate post. |
+| Only one platform needed | Draft that platform only — skip the others. |
 | No posting integration available | Deliver as plain text for manual posting. Note this in the output. |
-| Sakina unsure about posting | Save to `.tmp/linkedin-draft-[date].md` for later. Do not post. |
+| Sakina unsure about posting | Save drafts to `.tmp/social-draft-[date].md` for later. Do not post. |
+| Instagram visual unclear | Ask: "What image or graphic will accompany this post?" — adapt caption accordingly |
 
 ---
 
 ## Output
 
-A LinkedIn post draft, reviewed and approved by Sakina, ready to post.
+Three platform-specific drafts — LinkedIn, Instagram, Facebook — in Sakina's voice. Delivered as a branded multi-platform PDF. Reviewed and approved before any posting happens.
 
 ---
 
 *Social Media Post Blueprint — SM Agent*
-*Version 1.0 — 2026-05-28*
+*Version 2.0 — 2026-05-28*

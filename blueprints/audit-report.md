@@ -52,6 +52,14 @@ Each finding must include:
 
 Each recommendation must be actionable with a clear owner and timeline. No vague recommendations.
 
+### Step 2b: Produce Branded PDF
+
+Read `templates/audit-report.html`. Replace every `[placeholder]` with the structured report content — client details, audit reference, executive summary, current state table, all findings with impacts, all recommendations, and the action plan table.
+
+Output the complete populated HTML in a code block.
+
+Say: "Save this as `[audit-reference].html`, open it in a browser, and File → Print → Save as PDF. That's your branded audit report PDF."
+
 ### Step 3: Sanity Check
 
 Before creating the document, review for:

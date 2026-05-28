@@ -90,15 +90,32 @@
       font-size: 13px; color: #C2185B; font-style: italic;
     }
 
+    /* ── PAID WATERMARK ── */
+    .watermark {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      font-size: 96px; font-weight: 900;
+      color: rgba(233, 30, 140, 0.10);
+      letter-spacing: 0.25em;
+      pointer-events: none; user-select: none;
+      z-index: 1000; white-space: nowrap;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    }
+
     /* ── PRINT ── */
     @media print {
       body { padding: 20px; font-size: 11pt; }
       .accent-line { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .totals-row.total { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .watermark { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
 <body>
+
+<!-- PAID WATERMARK — uncomment this line when marking the invoice as paid -->
+<!-- <div class="watermark">PAID</div> -->
 
 <!-- HEADER -->
 <div class="doc-header">

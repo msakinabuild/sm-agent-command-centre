@@ -53,6 +53,14 @@ Say: "Here's the invoice draft — confirm details before I create the doc."
 
 If pricing or bank details are missing: insert `[FLAG: confirm before sending]` and continue. Do not block.
 
+### Step 2b: Produce Branded PDF
+
+Read `templates/invoice.html`. Replace every `[placeholder]` with the approved invoice data — invoice number, dates, client details, all line items, totals, payment terms, and bank details.
+
+Output the complete populated HTML in a code block.
+
+Say: "Save this as `[invoice-number].html`, open it in a browser, and File → Print → Save as PDF. That's your branded invoice PDF."
+
 ### Step 3: Create Google Drive Document
 
 Once Sakina approves the draft:
@@ -106,6 +114,20 @@ Confirm what was produced:
 - [ ] Gmail draft saved — awaiting send
 - [ ] Ledger entry logged
 - [ ] Follow-up tasks added
+
+---
+
+## Marking an Invoice as Paid
+
+When a client pays:
+
+1. Open the invoice HTML file
+2. Find the line: `<!-- <div class="watermark">PAID</div> -->`
+3. Remove the comment markers so it reads: `<div class="watermark">PAID</div>`
+4. Open in browser → File → Print → Save as PDF
+5. Send the PAID version to the client as their receipt
+
+The watermark is a large diagonal "PAID" in transparent pink — visible but unobtrusive.
 
 ---
 

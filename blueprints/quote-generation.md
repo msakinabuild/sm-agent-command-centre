@@ -42,6 +42,14 @@ Using `templates/quote.md` as the structure, populate all placeholders:
 
 Apply voice.md rules throughout: professional but warm, short paragraphs, no jargon.
 
+### Step 1b: Produce Branded PDF
+
+Read `templates/quote.html`. Replace every `[placeholder]` with the approved quote data — reference number, dates, client details, scope, deliverables table, timeline, investment table, terms, and next steps.
+
+Output the complete populated HTML in a code block.
+
+Say: "Save this as `[quote-reference].html`, open it in a browser, and File → Print → Save as PDF. That's your branded quote PDF."
+
 ### Step 2: Sanity Check
 
 Before creating the document, review the draft for:

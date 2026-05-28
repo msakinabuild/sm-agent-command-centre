@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Social Content Draft — SM Agent</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-size: 14px; line-height: 1.6; color: #1F2937;
+      background: #fff; padding: 40px;
+      max-width: 860px; margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .doc-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .doc-logo { display: flex; align-items: center; gap: 14px; }
+    .doc-logo-text h1 { font-size: 20px; font-weight: 800; color: #1F2937; letter-spacing: -0.03em; }
+    .doc-logo-text p { font-size: 9px; color: #9CA3AF; letter-spacing: 2px; text-transform: uppercase; margin-top: 1px; }
+    .doc-contact { text-align: right; font-size: 12px; color: #6B7280; line-height: 1.8; }
+    .doc-contact a { color: #6B7280; }
+    .accent-line { height: 2px; background: #E91E8C; margin-bottom: 28px; border-radius: 1px; }
+
+    /* ── DOC TITLE ── */
+    .doc-title-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 20px;
+    }
+    .doc-title-row h2 { font-size: 26px; font-weight: 800; color: #E91E8C; letter-spacing: -0.04em; }
+
+    /* ── STATUS BADGE ── */
+    .badge-status {
+      display: inline-flex; align-items: center;
+      padding: 5px 12px; border-radius: 20px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      background: #FDF2F8; color: #C2185B; border: 1px solid #E91E8C;
+    }
+
+    /* ── META ROW ── */
+    .meta-row {
+      display: flex; gap: 32px; margin-bottom: 32px;
+      padding: 12px 16px; background: #F9FAFB; border-radius: 6px;
+      border: 1px solid #E5E7EB; font-size: 12px; color: #6B7280;
+    }
+    .meta-item strong { color: #1F2937; display: block; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
+
+    /* ── PLATFORM SECTIONS ── */
+    .platform-section {
+      border: 1px solid #E5E7EB; border-radius: 10px;
+      margin-bottom: 24px; overflow: hidden;
+    }
+    .platform-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px; border-bottom: 1px solid #E5E7EB;
+    }
+    .platform-left { display: flex; align-items: center; gap: 10px; }
+    .platform-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 20px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+      color: #fff;
+    }
+    .badge-linkedin { background: #0A66C2; }
+    .badge-instagram { background: linear-gradient(135deg, #833AB4, #E1306C, #FD1D1D); }
+    .badge-facebook { background: #1877F2; }
+    .platform-title { font-size: 13px; font-weight: 700; color: #1F2937; }
+    .platform-limit { font-size: 11px; color: #9CA3AF; }
+
+    .platform-body { padding: 18px 20px; }
+
+    /* ── FORMAT RULES ── */
+    .format-rules {
+      display: flex; gap: 16px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .format-rule {
+      font-size: 11px; color: #6B7280; padding: 3px 8px;
+      background: #F9FAFB; border-radius: 4px; border: 1px solid #E5E7EB;
+    }
+    .format-rule span { color: #E91E8C; font-weight: 700; }
+
+    /* ── CONTENT BOX ── */
+    .content-box {
+      background: #fff; border: 1px solid #E5E7EB; border-radius: 6px;
+      padding: 18px 20px; font-size: 13px; color: #374151; line-height: 1.8;
+      white-space: pre-wrap; min-height: 80px;
+    }
+
+    /* ── HASHTAGS ── */
+    .hashtags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .hashtag {
+      padding: 3px 9px; background: #FDF2F8; border-radius: 4px;
+      font-size: 12px; color: #E91E8C; font-weight: 600;
+    }
+    .hashtag.muted { background: #F9FAFB; color: #9CA3AF; }
+
+    /* ── COUNT BAR ── */
+    .count-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 12px; padding: 6px 0; border-top: 1px solid #F3F4F6;
+      font-size: 11px; color: #9CA3AF;
+    }
+    .count-bar .count-num { font-weight: 700; color: #6B7280; }
+
+    /* ── APPROVAL ── */
+    .approval-box {
+      margin-top: 28px; padding: 16px 20px;
+      border: 1px dashed #E91E8C; border-radius: 8px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .approval-label { font-weight: 700; color: #1F2937; font-size: 13px; }
+    .approval-note { font-size: 12px; color: #6B7280; margin-top: 2px; }
+    .approval-fields { display: flex; gap: 32px; }
+    .field-item { font-size: 12px; color: #6B7280; }
+    .field-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #9CA3AF; display: block; margin-bottom: 2px; }
+    .field-line { display: block; border-bottom: 1px solid #E5E7EB; width: 110px; margin-top: 16px; }
+
+    /* ── FOOTER ── */
+    .doc-footer {
+      margin-top: 40px; padding-top: 16px; border-top: 1px solid #E5E7EB;
+      text-align: center; font-size: 11px; color: #9CA3AF;
+    }
+    .doc-footer a { color: #9CA3AF; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { padding: 20px; font-size: 11pt; }
+      .platform-section { page-break-inside: avoid; }
+      .accent-line { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .badge-linkedin, .badge-instagram, .badge-facebook { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .hashtag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="doc-logo">
+    <svg width="36" height="46" viewBox="0 0 56 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 42 8 C 58 8 58 34 28 34 C -2 34 -2 60 14 60" stroke="#E91E8C" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <circle cx="42" cy="8" r="6.5" fill="#E91E8C"/>
+      <circle cx="42" cy="8" r="3" fill="#fff"/>
+      <circle cx="28" cy="34" r="5" fill="#C2185B"/>
+      <circle cx="28" cy="34" r="2" fill="#fff"/>
+      <circle cx="14" cy="60" r="6.5" fill="#E91E8C"/>
+      <polygon points="11,57 17,60 11,63" fill="#fff"/>
+    </svg>
+    <div class="doc-logo-text">
+      <h1>SM Agent</h1>
+      <p>AI Automation</p>
+    </div>
+  </div>
+  <div class="doc-contact">
+    Sakina Moutaki<br>
+    <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a><br>
+    +49 176 814 87202<br>
+    www.smagent.com
+  </div>
+</div>
+<div class="accent-line"></div>
+
+<!-- DOC TITLE + STATUS -->
+<div class="doc-title-row">
+  <h2>SOCIAL CONTENT DRAFT</h2>
+  <span class="badge-status">Awaiting Approval — Do Not Post</span>
+</div>
+
+<!-- META -->
+<div class="meta-row">
+  <div class="meta-item">
+    <strong>Topic</strong>
+    [Post topic]
+  </div>
+  <div class="meta-item">
+    <strong>Date</strong>
+    [YYYY-MM-DD]
+  </div>
+  <div class="meta-item">
+    <strong>Platforms</strong>
+    LinkedIn · Instagram · Facebook
+  </div>
+  <div class="meta-item">
+    <strong>Audience</strong>
+    SME owners, MENA
+  </div>
+</div>
+
+<!-- ── LINKEDIN ── -->
+<div class="platform-section">
+  <div class="platform-header">
+    <div class="platform-left">
+      <span class="platform-badge badge-linkedin">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </span>
+      <span class="platform-title">Professional feed post</span>
+    </div>
+    <span class="platform-limit">150–300 words · 3–5 hashtags</span>
+  </div>
+  <div class="platform-body">
+    <div class="format-rules">
+      <span class="format-rule">Tone: <span>professional, direct</span></span>
+      <span class="format-rule">Hook: <span>first line stops the scroll</span></span>
+      <span class="format-rule">No jargon</span>
+      <span class="format-rule">End with takeaway or question</span>
+    </div>
+    <div class="content-box">[LinkedIn post content here — short paragraphs, white space matters.
+
+Hook on the first line.
+
+Context in 1–2 sentences.
+
+The insight or main point.
+
+One concrete example or stat.
+
+Takeaway or question to prompt engagement.]</div>
+    <div class="hashtags">
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag">#[hashtag]</span>
+    </div>
+    <div class="count-bar">
+      <span>Word count</span>
+      <span class="count-num">[N] / 300</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── INSTAGRAM ── -->
+<div class="platform-section">
+  <div class="platform-header">
+    <div class="platform-left">
+      <span class="platform-badge badge-instagram">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </span>
+      <span class="platform-title">Caption + hashtag block</span>
+    </div>
+    <span class="platform-limit">50–150 words · 15–25 hashtags</span>
+  </div>
+  <div class="platform-body">
+    <div class="format-rules">
+      <span class="format-rule">Tone: <span>warmer, more personal</span></span>
+      <span class="format-rule">Visual reference: <span>describe the image</span></span>
+      <span class="format-rule">Emojis: <span>1–3 max</span></span>
+      <span class="format-rule">Hashtags: <span>first comment or end of caption</span></span>
+    </div>
+    <div class="content-box">[Instagram caption — shorter than LinkedIn. Hook first. More conversational. Reference what's in the image if relevant.
+
+Key message in 2–3 sentences.
+
+Call to action or question.]</div>
+    <div class="hashtags">
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag muted">#[hashtag]</span>
+      <span class="hashtag muted">#[hashtag]</span>
+      <span class="hashtag muted">#[hashtag]</span>
+      <span class="hashtag muted">#[hashtag]</span>
+      <span class="hashtag muted">#[hashtag]</span>
+    </div>
+    <div class="count-bar">
+      <span>Caption words</span>
+      <span class="count-num">[N] / 150 · [N] hashtags</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── FACEBOOK ── -->
+<div class="platform-section">
+  <div class="platform-header">
+    <div class="platform-left">
+      <span class="platform-badge badge-facebook">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </span>
+      <span class="platform-title">Page or personal post</span>
+    </div>
+    <span class="platform-limit">40–80 words · 0–3 hashtags</span>
+  </div>
+  <div class="platform-body">
+    <div class="format-rules">
+      <span class="format-rule">Tone: <span>conversational, community</span></span>
+      <span class="format-rule">Shorter than LinkedIn</span>
+      <span class="format-rule">Question or CTA</span>
+      <span class="format-rule">Minimal hashtags</span>
+    </div>
+    <div class="content-box">[Facebook post — most conversational of the three. Lead with the point in plain language. 2–3 short sentences. End with a direct question to drive comments.]</div>
+    <div class="hashtags">
+      <span class="hashtag">#[hashtag]</span>
+      <span class="hashtag">#[hashtag]</span>
+    </div>
+    <div class="count-bar">
+      <span>Word count</span>
+      <span class="count-num">[N] / 80</span>
+    </div>
+  </div>
+</div>
+
+<!-- APPROVAL -->
+<div class="approval-box">
+  <div>
+    <div class="approval-label">Review & Approval</div>
+    <div class="approval-note">Do not post to any platform until signed off below.</div>
+  </div>
+  <div class="approval-fields">
+    <div class="field-item">
+      <span class="field-label">Approved by</span>
+      <span class="field-line"></span>
+    </div>
+    <div class="field-item">
+      <span class="field-label">Date approved</span>
+      <span class="field-line"></span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  Sakina Moutaki &nbsp;·&nbsp; SM Agent &nbsp;·&nbsp;
+  <a href="mailto:msakina.build@gmail.com">msakina.build@gmail.com</a> &nbsp;·&nbsp;
+  +49 176 814 87202 &nbsp;·&nbsp; www.smagent.com
+  <br><span style="margin-top:4px;display:block">Social Content Draft — [Topic] — [YYYY-MM-DD]</span>
+</div>
+
+</body>
+</html>
