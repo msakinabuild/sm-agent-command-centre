@@ -24,7 +24,7 @@ Confirm all of these before starting. Stop and ask for anything missing.
 | Client email | nour@apexhr.com |
 | Problem they're solving | Manual client onboarding taking too long |
 | Services proposed | Client onboarding automation, data scraping |
-| Pricing | See `intel/pricing.md` — Audit AED 1,500 / Starter AED 3,500 / Growth AED 8,500 + AED 1,500/mo / Full Ops AED 18,000 + AED 3,000/mo / Custom from AED 12,000 |
+| Pricing | See `intel/pricing.md` — Audit $400 / Starter $1,000 / Growth $2,500 + $400/mo / Full Ops $5,000 + $800/mo / Custom from $3,500 |
 | Delivery timeline | First version in 3 weeks |
 | Any extras | Specific tools they use, constraints, things they mentioned |
 

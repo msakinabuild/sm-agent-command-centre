@@ -1,13 +1,13 @@
 # Pricing — SM Agent
 
 *Last updated: 2026-05-28*
-*Currency: AED. Convert to USD at ~3.67 if needed.*
+*Currency: USD.*
 
 ---
 
 ## Standard Offers
 
-### 1. Automation Audit — AED 1,500
+### 1. Automation Audit — $400
 
 **What it is:** A focused review of how the client currently runs their operations, what's manual, what's breaking, and what should be automated first.
 
@@ -18,11 +18,11 @@
 
 **Best for:** Clients who aren't sure where to start. Great entry point — builds trust before a larger commitment.
 
-**Note:** AED 1,500 is credited toward any package booked within 30 days.
+**Note:** $400 is credited toward any package booked within 30 days.
 
 ---
 
-### 2. Starter — AED 3,500 (one-time)
+### 2. Starter — $1,000 (one-time)
 
 **What it is:** One workflow automated. Scoped, built, and handed over.
 
@@ -38,7 +38,7 @@
 
 ---
 
-### 3. Growth — AED 8,500 setup + AED 1,500/month
+### 3. Growth — $2,500 setup + $400/month
 
 **What it is:** Three workflows automated, an AI assistant configured for the business, and ongoing monthly support.
 
@@ -59,7 +59,7 @@
 
 ---
 
-### 4. Full Operations — AED 18,000 setup + AED 3,000/month
+### 4. Full Operations — $5,000 setup + $800/month
 
 **What it is:** A full AI operations build — audit, up to 6 workflows, AI assistant, team training, and ongoing management.
 
@@ -82,7 +82,7 @@
 
 ---
 
-### 5. Custom / Bespoke — From AED 12,000
+### 5. Custom / Bespoke — From $3,500
 
 For complex requirements, larger teams, or projects that don't fit a standard package. Quoted after discovery.
 
@@ -94,11 +94,11 @@ Examples: multi-system integrations, industry-specific automations, SaaS builds,
 
 | Offer | Setup | Monthly | Workflows | Best For |
 |-------|-------|---------|-----------|----------|
-| Automation Audit | AED 1,500 | — | — | Entry point, diagnosis |
-| Starter | AED 3,500 | — | 1 | One clear pain point |
-| Growth | AED 8,500 | AED 1,500 | 3 + assistant | Core operations |
-| Full Operations | AED 18,000 | AED 3,000 | 6 + assistant | Full AI business |
-| Custom | From AED 12,000 | POA | Custom | Complex or large scope |
+| Automation Audit | $400 | — | — | Entry point, diagnosis |
+| Starter | $1,000 | — | 1 | One clear pain point |
+| Growth | $2,500 | $400 | 3 + assistant | Core operations |
+| Full Operations | $5,000 | $800 | 6 + assistant | Full AI business |
+| Custom | From $3,500 | POA | Custom | Complex or large scope |
 
 ---
 
@@ -107,7 +107,7 @@ Examples: multi-system integrations, industry-specific automations, SaaS builds,
 - All prices exclude VAT where applicable
 - Deposit: 50% upfront, 50% on delivery (Starter and above)
 - Payment terms: 14 days from invoice date
-- Audit credit: AED 1,500 audit fee credited toward any package booked within 30 days
+- Audit credit: $400 audit fee credited toward any package booked within 30 days
 
 ---
 
